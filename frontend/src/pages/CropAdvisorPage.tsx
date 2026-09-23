@@ -15,7 +15,7 @@ export default function CropAdvisorPage(){
   };
   useEffect(load,[]);
   const runForSpring=async()=>{
-    setBusy(true); setErr(''); setExplain('');
+    setBusy(true); setErr(''); setExplain(''); setResult(null);
     try{ const r=await api.cropAdvisor({spring_id: sel}); setResult(r); } catch(e:any){ setErr(e.message);} finally{ setBusy(false);}
   };
   const runCustom=async()=>{
@@ -30,7 +30,7 @@ export default function CropAdvisorPage(){
       setExplain(r.explanation || JSON.stringify(r).slice(0,400));
     }catch(e:any){ setErr(e.message); }
   };
-  useEffect(()=>{ if(springs.length) runForSpring(); }, [sel]); // auto when sel changes
+  // REMOVED auto-run on sel change — user must click Advise for Spring
   return (
     <div className="space-y-4">
       <Card title="Smart Crop Advisor — Water-Aware Farming" sub="Uses recharge + IMD rainfall + soil to recommend crops that WILL survive. Prototype Decision-Support Estimate.">
@@ -53,7 +53,7 @@ export default function CropAdvisorPage(){
         {explain && <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded text-sm">{explain}</div>}
       </Card>
 
-      {!result ? <Loading label="Select a spring…" /> : (
+      {!result ? <div className="text-center py-8 text-sm text-slate-500 border border-dashed rounded-lg bg-slate-50">👆 Select a spring and click <b>Advise for Spring</b> to see recommendations — or use custom values below and click <b>Advise for Custom</b></div> : (
         <>
           <div className="grid md:grid-cols-3 gap-4">
             <Card title={`✅ Recommended (${result.counts?.recommended||0})`} sub="Will survive with your water">
