@@ -1,0 +1,13 @@
+month,month_num,rainfall_mm,rainy_days
+Jan,1,15,1
+Feb,2,16,1
+Mar,3,25,2
+Apr,4,35,2
+May,5,70,3
+Jun,6,212,8
+Jul,7,330,14
+Aug,8,308,14
+Sep,9,223,11
+Oct,10,87,3
+Nov,11,18,1
+Dec,12,10,0

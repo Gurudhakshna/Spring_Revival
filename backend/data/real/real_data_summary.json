@@ -1,0 +1,18 @@
+{
+  "district_normal": {
+    "file": "rainfall_district_normal.csv",
+    "rows": 641,
+    "districts": 637,
+    "states": 35
+  },
+  "historical": {
+    "file": "rainfall_historical_1901_2017.csv",
+    "rows": 4188,
+    "subdivisions": 36,
+    "years": "1901-2017"
+  },
+  "soil": {
+    "file": "soil_district.csv",
+    "rows": 673
+  }
+}

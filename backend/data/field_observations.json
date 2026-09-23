@@ -1,0 +1,50 @@
+[
+  {
+    "observation_id": "FO-20260923-1612",
+    "spring_id": "SPR-001",
+    "observer_name": "Test Officer",
+    "discharge_lpm": 12.5,
+    "water_quality": "clear",
+    "turbidity": null,
+    "ph": null,
+    "notes": "Test from judge simulation",
+    "latitude": 23.45,
+    "longitude": 84.95,
+    "photo_url": "",
+    "photos": [],
+    "created_at": "2026-09-23T16:06:13Z",
+    "verified": false
+  },
+  {
+    "observation_id": "FO-20260923-B1C2",
+    "spring_id": "SPR-037",
+    "observer_name": "Judge Field Test",
+    "discharge_lpm": 8.0,
+    "water_quality": "",
+    "turbidity": null,
+    "ph": null,
+    "notes": "Judge simulation field note",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "photo_url": "",
+    "photos": [],
+    "created_at": "2026-09-23T16:17:05Z",
+    "verified": false
+  },
+  {
+    "observation_id": "FO-20260923-EA8B",
+    "spring_id": "SPR-003",
+    "observer_name": "Ragupathi K",
+    "discharge_lpm": 12.0,
+    "water_quality": "Turbid",
+    "turbidity": null,
+    "ph": null,
+    "notes": "Not proper Sanitation\n[Photo: image 1 of second image.png 1979KB]",
+    "latitude": 12.87286,
+    "longitude": 79.99511,
+    "photo_url": "",
+    "photos": [],
+    "created_at": "2026-09-23T16:24:26Z",
+    "verified": false
+  }
+]

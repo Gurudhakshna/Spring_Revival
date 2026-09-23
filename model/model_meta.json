@@ -1,0 +1,18 @@
+{
+  "model": "RandomForestRegressor",
+  "n_estimators": 200,
+  "target": "recharge_suitability",
+  "features": [
+    "elevation_m",
+    "slope_deg",
+    "annual_rainfall_mm",
+    "soil_moisture_index",
+    "distance_to_stream_m",
+    "lineament_density_index",
+    "groundwater_depth_m",
+    "land_use",
+    "geology"
+  ],
+  "n_train": 800,
+  "disclaimer": "Prototype Decision-Support Estimate"
+}

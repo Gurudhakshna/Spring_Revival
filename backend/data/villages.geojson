@@ -1,0 +1,1942 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "study_area": "Pan-India Tribal Belts (7 zones)",
+    "note": "DEMO DATA - Synthetic Prototype Dataset - 7 tribal belts",
+    "total_villages": 84
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-001",
+        "name": "Hesatu",
+        "population": 1450,
+        "households": 285,
+        "block": "Gumla Sadar",
+        "elevation_m": 722,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.902,
+          23.512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-002",
+        "name": "Jariya",
+        "population": 980,
+        "households": 196,
+        "block": "Gumla Sadar",
+        "elevation_m": 489,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.968,
+          23.498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-003",
+        "name": "Kulhi",
+        "population": 1720,
+        "households": 344,
+        "block": "Raidih",
+        "elevation_m": 584,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.012,
+          23.471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-004",
+        "name": "Biren",
+        "population": 640,
+        "households": 128,
+        "block": "Gumla Sadar",
+        "elevation_m": 564,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.891,
+          23.445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-005",
+        "name": "Toto",
+        "population": 2100,
+        "households": 420,
+        "block": "Raidih",
+        "elevation_m": 759,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.945,
+          23.428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-006",
+        "name": "Silam",
+        "population": 870,
+        "households": 174,
+        "block": "Raidih",
+        "elevation_m": 737,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.005,
+          23.412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-007",
+        "name": "Ambatoli",
+        "population": 1230,
+        "households": 246,
+        "block": "Gumla Sadar",
+        "elevation_m": 819,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.925,
+          23.486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-008",
+        "name": "Kotam",
+        "population": 1890,
+        "households": 378,
+        "block": "Raidih",
+        "elevation_m": 513,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.985,
+          23.458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-009",
+        "name": "Puto",
+        "population": 520,
+        "households": 104,
+        "block": "Palkot",
+        "elevation_m": 640,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.915,
+          23.431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-010",
+        "name": "Gerda",
+        "population": 1560,
+        "households": 312,
+        "block": "Palkot",
+        "elevation_m": 491,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.962,
+          23.405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-011",
+        "name": "Chirgora",
+        "population": 760,
+        "households": 152,
+        "block": "Gumla Sadar",
+        "elevation_m": 563,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.955,
+          23.525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-012",
+        "name": "Banai",
+        "population": 1340,
+        "households": 268,
+        "block": "Raidih",
+        "elevation_m": 672,
+        "district": "Gumla (prototype)",
+        "state": "Jharkhand",
+        "tribal_belt": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.035,
+          23.448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-013",
+        "name": "Mandla",
+        "population": 1650,
+        "households": 330,
+        "block": "Mandla",
+        "elevation_m": 357,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.62,
+          22.92
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-014",
+        "name": "Dindori",
+        "population": 890,
+        "households": 178,
+        "block": "Dindori",
+        "elevation_m": 409,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.58,
+          22.88
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-015",
+        "name": "Kukshi",
+        "population": 1320,
+        "households": 264,
+        "block": "Dhar",
+        "elevation_m": 544,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.65,
+          22.95
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-016",
+        "name": "Alirajpur",
+        "population": 780,
+        "households": 156,
+        "block": "Alirajpur",
+        "elevation_m": 513,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.55,
+          22.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-017",
+        "name": "Jhabua",
+        "population": 2100,
+        "households": 420,
+        "block": "Jhabua",
+        "elevation_m": 416,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.7,
+          22.9
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-018",
+        "name": "Betul",
+        "population": 560,
+        "households": 112,
+        "block": "Betul",
+        "elevation_m": 526,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5,
+          22.87
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-019",
+        "name": "Seoni",
+        "population": 1420,
+        "households": 284,
+        "block": "Seoni",
+        "elevation_m": 592,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.68,
+          22.93
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-020",
+        "name": "Chhindwara",
+        "population": 980,
+        "households": 196,
+        "block": "Chhindwara",
+        "elevation_m": 351,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.62,
+          22.84
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-021",
+        "name": "Anuppur",
+        "population": 1120,
+        "households": 224,
+        "block": "Anuppur",
+        "elevation_m": 591,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.55,
+          22.96
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-022",
+        "name": "Umaria",
+        "population": 760,
+        "households": 152,
+        "block": "Umaria",
+        "elevation_m": 559,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.72,
+          22.89
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-023",
+        "name": "Shahdol",
+        "population": 1340,
+        "households": 268,
+        "block": "Shahdol",
+        "elevation_m": 452,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.48,
+          22.91
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-024",
+        "name": "Balaghat",
+        "population": 890,
+        "households": 178,
+        "block": "Balaghat",
+        "elevation_m": 396,
+        "district": "Mandla-Dhar (prototype)",
+        "state": "Madhya Pradesh",
+        "tribal_belt": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.66,
+          22.86
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-025",
+        "name": "Udaipur Bhil",
+        "population": 1850,
+        "households": 370,
+        "block": "Udaipur",
+        "elevation_m": 441,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.52,
+          23.82
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-026",
+        "name": "Dungarpur",
+        "population": 920,
+        "households": 184,
+        "block": "Dungarpur",
+        "elevation_m": 317,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.48,
+          23.78
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-027",
+        "name": "Banswara",
+        "population": 1230,
+        "households": 246,
+        "block": "Banswara",
+        "elevation_m": 268,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.55,
+          23.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-028",
+        "name": "Dahod",
+        "population": 670,
+        "households": 134,
+        "block": "Dahod",
+        "elevation_m": 269,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.45,
+          23.75
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-029",
+        "name": "Jhadol",
+        "population": 2100,
+        "households": 420,
+        "block": "Jhadol",
+        "elevation_m": 419,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.53,
+          23.88
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-030",
+        "name": "Kotra",
+        "population": 480,
+        "households": 96,
+        "block": "Kotra",
+        "elevation_m": 370,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.58,
+          23.77
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-031",
+        "name": "Kherwara",
+        "population": 980,
+        "households": 196,
+        "block": "Kherwara",
+        "elevation_m": 411,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.48,
+          23.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-032",
+        "name": "Sagwara",
+        "population": 1120,
+        "households": 224,
+        "block": "Sagwara",
+        "elevation_m": 395,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6,
+          23.8
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-033",
+        "name": "Aspur",
+        "population": 560,
+        "households": 112,
+        "block": "Aspur",
+        "elevation_m": 357,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.42,
+          23.86
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-034",
+        "name": "Sabarkantha",
+        "population": 780,
+        "households": 156,
+        "block": "Sabarkantha",
+        "elevation_m": 444,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.62,
+          23.79
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-035",
+        "name": "ChhotaUdepur",
+        "population": 1340,
+        "households": 268,
+        "block": "Chhota Udaipur",
+        "elevation_m": 325,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.5,
+          23.84
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-036",
+        "name": "Panchmahal",
+        "population": 890,
+        "households": 178,
+        "block": "Panchmahal",
+        "elevation_m": 360,
+        "district": "Udaipur-Dahod (prototype)",
+        "state": "Rajasthan",
+        "tribal_belt": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.54,
+          23.76
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-037",
+        "name": "Shillong Khasi",
+        "population": 1450,
+        "households": 290,
+        "block": "East Khasi Hills",
+        "elevation_m": 1263,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.92,
+          26.12
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-038",
+        "name": "Cherrapunji",
+        "population": 670,
+        "households": 134,
+        "block": "East Khasi Hills",
+        "elevation_m": 1094,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.88,
+          26.08
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-039",
+        "name": "Kohima Naga",
+        "population": 1890,
+        "households": 378,
+        "block": "Kohima",
+        "elevation_m": 1289,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.95,
+          26.15
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-040",
+        "name": "Mokokchung",
+        "population": 920,
+        "households": 184,
+        "block": "Mokokchung",
+        "elevation_m": 1061,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.85,
+          26.05
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-041",
+        "name": "Aizawl Mizo",
+        "population": 2100,
+        "households": 420,
+        "block": "Aizawl",
+        "elevation_m": 1163,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.98,
+          26.18
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-042",
+        "name": "Imphal Kuki",
+        "population": 560,
+        "households": 112,
+        "block": "Ukhrul",
+        "elevation_m": 636,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.82,
+          26.02
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-043",
+        "name": "Tawang Monpa",
+        "population": 480,
+        "households": 96,
+        "block": "Tawang",
+        "elevation_m": 782,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.88,
+          26.14
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-044",
+        "name": "Dimapur",
+        "population": 1230,
+        "households": 246,
+        "block": "Dimapur",
+        "elevation_m": 831,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.94,
+          26.1
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-045",
+        "name": "Wokha",
+        "population": 780,
+        "households": 156,
+        "block": "Wokha",
+        "elevation_m": 663,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.91,
+          26.06
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-046",
+        "name": "Tuensang",
+        "population": 890,
+        "households": 178,
+        "block": "Tuensang",
+        "elevation_m": 786,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.86,
+          26.16
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-047",
+        "name": "Jowai",
+        "population": 1120,
+        "households": 224,
+        "block": "West Jaintia",
+        "elevation_m": 680,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.96,
+          26.11
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-048",
+        "name": "Nongpoh",
+        "population": 1340,
+        "households": 268,
+        "block": "Ri Bhoi",
+        "elevation_m": 822,
+        "district": "Shillong-Kohima (prototype)",
+        "state": "Meghalaya-Nagaland",
+        "tribal_belt": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.89,
+          26.03
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-049",
+        "name": "Wayanad Kurichiya",
+        "population": 1650,
+        "households": 330,
+        "block": "Wayanad",
+        "elevation_m": 917,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.12,
+          11.82
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-050",
+        "name": "Attappadi",
+        "population": 890,
+        "households": 178,
+        "block": "Palakkad",
+        "elevation_m": 782,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.08,
+          11.78
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-051",
+        "name": "Gadchiroli Madia",
+        "population": 1320,
+        "households": 264,
+        "block": "Gadchiroli",
+        "elevation_m": 785,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.15,
+          11.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-052",
+        "name": "Coorg Jenu",
+        "population": 780,
+        "households": 156,
+        "block": "Kodagu",
+        "elevation_m": 704,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.05,
+          11.75
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-053",
+        "name": "Banswara Ghat",
+        "population": 2100,
+        "households": 420,
+        "block": "Wayanad",
+        "elevation_m": 733,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.13,
+          11.88
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-054",
+        "name": "Nilambur",
+        "population": 560,
+        "households": 112,
+        "block": "Malappuram",
+        "elevation_m": 1068,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.18,
+          11.77
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-055",
+        "name": "Sirsi Siddi",
+        "population": 1420,
+        "households": 284,
+        "block": "Uttara Kannada",
+        "elevation_m": 924,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.08,
+          11.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-056",
+        "name": "Dandeli",
+        "population": 980,
+        "households": 196,
+        "block": "Karwar",
+        "elevation_m": 904,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.2,
+          11.8
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-057",
+        "name": "Munnar Muthuvan",
+        "population": 1120,
+        "households": 224,
+        "block": "Idukki",
+        "elevation_m": 685,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.05,
+          11.86
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-058",
+        "name": "Agumbe Malekudiya",
+        "population": 760,
+        "households": 152,
+        "block": "Shivamogga",
+        "elevation_m": 964,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.14,
+          11.79
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-059",
+        "name": "Jawadhu Malayali",
+        "population": 1340,
+        "households": 268,
+        "block": "Tiruvannamalai",
+        "elevation_m": 681,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.09,
+          11.81
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-060",
+        "name": "Araku Bagata",
+        "population": 890,
+        "households": 178,
+        "block": "Alluri",
+        "elevation_m": 789,
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "state": "Kerala-Karnataka",
+        "tribal_belt": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.11,
+          11.84
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-061",
+        "name": "Jawadhu",
+        "population": 1450,
+        "households": 290,
+        "block": "Tiruvannamalai",
+        "elevation_m": 695,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.02,
+          13.52
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-062",
+        "name": "Kalrayan",
+        "population": 670,
+        "households": 134,
+        "block": "Kallakurichi",
+        "elevation_m": 555,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.98,
+          13.48
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-063",
+        "name": "Pachamalai",
+        "population": 1890,
+        "households": 378,
+        "block": "Tiruchirappalli",
+        "elevation_m": 522,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.05,
+          13.55
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-064",
+        "name": "Araku Valley",
+        "population": 920,
+        "households": 184,
+        "block": "Alluri Sitharama",
+        "elevation_m": 573,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.95,
+          13.45
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-065",
+        "name": "Paderu",
+        "population": 2100,
+        "households": 420,
+        "block": "Alluri Sitharama",
+        "elevation_m": 637,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.08,
+          13.58
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-066",
+        "name": "Sittilingi",
+        "population": 560,
+        "households": 112,
+        "block": "Dharmapuri",
+        "elevation_m": 610,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1,
+          13.47
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-067",
+        "name": "Kolli Hills",
+        "population": 1230,
+        "households": 246,
+        "block": "Namakkal",
+        "elevation_m": 391,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.92,
+          13.53
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-068",
+        "name": "Yelagiri",
+        "population": 980,
+        "households": 196,
+        "block": "Tirupattur",
+        "elevation_m": 312,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.04,
+          13.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-069",
+        "name": "Palamalai",
+        "population": 780,
+        "households": 156,
+        "block": "Coimbatore",
+        "elevation_m": 426,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.06,
+          13.46
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-070",
+        "name": "Chitteri",
+        "population": 890,
+        "households": 178,
+        "block": "Dharmapuri",
+        "elevation_m": 407,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.96,
+          13.56
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-071",
+        "name": "Shervaroy",
+        "population": 1120,
+        "households": 224,
+        "block": "Salem",
+        "elevation_m": 384,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.08,
+          13.51
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-072",
+        "name": "BR Hills Soliga",
+        "population": 1340,
+        "households": 268,
+        "block": "Chamarajanagar",
+        "elevation_m": 677,
+        "district": "Jawadhu-Araku (prototype)",
+        "state": "Tamil Nadu",
+        "tribal_belt": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.99,
+          13.49
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-073",
+        "name": "Nandurbar Bhil",
+        "population": 1650,
+        "households": 330,
+        "block": "Nandurbar",
+        "elevation_m": 606,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.22,
+          19.52
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-074",
+        "name": "Dhadgaon",
+        "population": 890,
+        "households": 178,
+        "block": "Nandurbar",
+        "elevation_m": 410,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.18,
+          19.48
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-075",
+        "name": "Toranmal",
+        "population": 1320,
+        "households": 264,
+        "block": "Nandurbar",
+        "elevation_m": 529,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.25,
+          19.55
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-076",
+        "name": "Bastar Muria",
+        "population": 780,
+        "households": 156,
+        "block": "Bastar",
+        "elevation_m": 438,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.15,
+          19.45
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-077",
+        "name": "Gadchiroli",
+        "population": 2100,
+        "households": 420,
+        "block": "Gadchiroli",
+        "elevation_m": 620,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.28,
+          19.58
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-078",
+        "name": "Dantewada",
+        "population": 560,
+        "households": 112,
+        "block": "Dantewada",
+        "elevation_m": 460,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3,
+          19.47
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-079",
+        "name": "Sukma",
+        "population": 1420,
+        "households": 284,
+        "block": "Sukma",
+        "elevation_m": 392,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.18,
+          19.53
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-080",
+        "name": "Bijapur",
+        "population": 980,
+        "households": 196,
+        "block": "Bijapur",
+        "elevation_m": 386,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.24,
+          19.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-081",
+        "name": "Narayanpur",
+        "population": 1120,
+        "households": 224,
+        "block": "Narayanpur",
+        "elevation_m": 496,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.22,
+          19.46
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-082",
+        "name": "Kanker",
+        "population": 760,
+        "households": 152,
+        "block": "Kanker",
+        "elevation_m": 391,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.15,
+          19.56
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-083",
+        "name": "Rajura",
+        "population": 1340,
+        "households": 268,
+        "block": "Chandrapur",
+        "elevation_m": 504,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.28,
+          19.51
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "village_id": "VIL-084",
+        "name": "Melghat Korku",
+        "population": 890,
+        "households": 178,
+        "block": "Amravati",
+        "elevation_m": 614,
+        "district": "Nandurbar-Bastar (prototype)",
+        "state": "Maharashtra",
+        "tribal_belt": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India Tribal Belts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.19,
+          19.49
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jharkhand-Odisha-Chhattisgarh Belt",
+        "belt_id": "jhk",
+        "state": "Jharkhand",
+        "district": "Gumla (prototype)",
+        "area_km2": 185,
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              84.86,
+              23.36
+            ],
+            [
+              85.04,
+              23.36
+            ],
+            [
+              85.04,
+              23.54
+            ],
+            [
+              84.86,
+              23.54
+            ],
+            [
+              84.86,
+              23.36
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Madhya Pradesh Tribal Belt",
+        "belt_id": "mp",
+        "state": "Madhya Pradesh",
+        "district": "Mandla-Dhar (prototype)",
+        "area_km2": 210,
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.50999999999999,
+              22.81
+            ],
+            [
+              78.69,
+              22.81
+            ],
+            [
+              78.69,
+              22.99
+            ],
+            [
+              78.50999999999999,
+              22.99
+            ],
+            [
+              78.50999999999999,
+              22.81
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rajasthan-Gujarat Bhil Belt",
+        "belt_id": "rj",
+        "state": "Rajasthan",
+        "district": "Udaipur-Dahod (prototype)",
+        "area_km2": 310,
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.41,
+              23.71
+            ],
+            [
+              73.59,
+              23.71
+            ],
+            [
+              73.59,
+              23.89
+            ],
+            [
+              73.41,
+              23.89
+            ],
+            [
+              73.41,
+              23.71
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Northeast Tribal Belt",
+        "belt_id": "ne",
+        "state": "Meghalaya-Nagaland",
+        "district": "Shillong-Kohima (prototype)",
+        "area_km2": 280,
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.81,
+              26.01
+            ],
+            [
+              92.99000000000001,
+              26.01
+            ],
+            [
+              92.99000000000001,
+              26.19
+            ],
+            [
+              92.81,
+              26.19
+            ],
+            [
+              92.81,
+              26.01
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Western Ghats Tribal Belt",
+        "belt_id": "ghats",
+        "state": "Kerala-Karnataka",
+        "district": "Wayanad-Gadchiroli (prototype)",
+        "area_km2": 250,
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.00999999999999,
+              11.71
+            ],
+            [
+              76.19,
+              11.71
+            ],
+            [
+              76.19,
+              11.89
+            ],
+            [
+              76.00999999999999,
+              11.89
+            ],
+            [
+              76.00999999999999,
+              11.71
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tamil Nadu-Andhra Tribal Belt",
+        "belt_id": "tn",
+        "state": "Tamil Nadu",
+        "district": "Jawadhu-Araku (prototype)",
+        "area_km2": 190,
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.91,
+              13.41
+            ],
+            [
+              79.09,
+              13.41
+            ],
+            [
+              79.09,
+              13.59
+            ],
+            [
+              78.91,
+              13.59
+            ],
+            [
+              78.91,
+              13.41
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Maharashtra-Chhattisgarh Central Belt",
+        "belt_id": "mh",
+        "state": "Maharashtra",
+        "district": "Nandurbar-Bastar (prototype)",
+        "area_km2": 230,
+        "source": "Synthetic Prototype Dataset \u2014 Pan-India"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.11,
+              19.41
+            ],
+            [
+              80.29,
+              19.41
+            ],
+            [
+              80.29,
+              19.59
+            ],
+            [
+              80.11,
+              19.59
+            ],
+            [
+              80.11,
+              19.41
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

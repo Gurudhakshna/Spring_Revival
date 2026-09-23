@@ -1,0 +1,127 @@
+spring_id,latitude,longitude,elevation_m,slope_deg,annual_rainfall_mm,soil_moisture_index,land_use,geology,distance_to_stream_m,lineament_density_index,groundwater_depth_m,recharge_suitability,discharge_lpm,seasonality,spring_type,nearby_village_id,nearby_village,state,tribal_belt
+SPR-001,23.50898,84.89358,859,16.2,995,0.28,forest,sandstone,879,0.44,7.2,41.9,40.4,Seasonal,contact spring,VIL-001,Hesatu,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-002,23.51213,84.97882,484,21.3,1290,0.6,forest,sandstone,158,0.45,20.9,68.3,19.8,Seasonal,fracture spring,VIL-002,Jariya,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-003,23.47123,85.00019,717,24.2,1203,0.38,agroforestry,fractured_rock,1050,0.84,37.1,51.5,25.3,Seasonal,seep,VIL-003,Kulhi,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-004,23.45787,84.90236,796,11.4,978,0.82,barren,fractured_rock,555,0.16,31.6,52.4,25.6,Seasonal,depression spring,VIL-004,Biren,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-005,23.44141,84.93495,680,18.6,1432,0.85,grassland,sandstone,795,0.42,28.5,55.9,32.6,Perennial,fracture spring,VIL-005,Toto,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-006,23.40374,85.00014,703,9.5,1060,0.3,agriculture,fractured_rock,999,0.79,7.5,57.7,31.7,Seasonal,fracture spring,VIL-006,Silam,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-007,23.4927,84.93647,698,9.8,1186,0.51,forest,sandstone,415,0.43,35.2,63.6,25.7,Perennial,seep,VIL-007,Ambatoli,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-008,23.45508,84.98018,807,10.0,1045,0.54,agroforestry,weathered_granite,304,0.84,20.5,65.8,19.1,Seasonal,seep,VIL-008,Kotam,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-009,23.44507,84.92779,802,8.0,1192,0.39,agroforestry,fractured_rock,441,0.89,14.3,68.2,17.8,Perennial,depression spring,VIL-009,Puto,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-010,23.39464,84.9559,848,17.9,1221,0.74,forest,sandstone,573,0.78,10.5,66.3,22.4,Seasonal,seep,VIL-010,Gerda,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-011,23.53026,84.94706,525,25.4,1073,0.64,agriculture,weathered_granite,658,0.52,37.7,50.2,34.5,Seasonal,fracture spring,VIL-011,Chirgora,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-012,23.44097,85.02393,725,15.0,1414,0.86,forest,sandstone,636,0.18,23.8,63.1,23.8,Perennial,seep,VIL-012,Banai,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-013,23.52338,84.89809,539,24.0,1301,0.65,barren,sandstone,48,0.75,15.5,56.6,18.1,Seasonal,seep,VIL-001,Hesatu,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-014,23.50969,84.97527,539,10.8,1055,0.47,agriculture,shale,575,0.3,36.8,50.4,30.1,Seasonal,contact spring,VIL-002,Jariya,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-015,23.45732,85.00701,529,27.5,1030,0.54,agriculture,sandstone,158,0.86,29.2,53.1,28.3,Seasonal,contact spring,VIL-003,Kulhi,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-016,23.44748,84.88044,528,11.4,1399,0.77,settlement,clay,262,0.3,8.6,59.1,17.2,Perennial,fracture spring,VIL-004,Biren,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-017,23.44077,84.9371,541,23.2,1038,0.52,forest,clay,869,0.43,28.4,42.2,28.2,Seasonal,fracture spring,VIL-005,Toto,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-018,23.42062,84.99324,811,24.6,1061,0.78,agroforestry,weathered_granite,883,0.28,5.8,53.9,30.5,Seasonal,seep,VIL-006,Silam,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+SPR-019,22.93401,78.61337,542,9.0,1092,0.49,settlement,fractured_rock,1068,0.24,34.0,49.6,30.5,Seasonal,depression spring,VIL-013,Mandla,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-020,22.87537,78.58859,480,17.8,746,0.69,agroforestry,fractured_rock,502,0.52,29.8,49.1,20.1,Seasonal,fracture spring,VIL-014,Dindori,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-021,22.94593,78.6371,549,8.0,825,0.67,grassland,weathered_granite,367,0.43,18.9,54.0,29.1,Seasonal,depression spring,VIL-015,Kukshi,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-022,22.85495,78.54637,574,5.6,927,0.42,grassland,weathered_granite,262,0.73,24.4,56.0,30.3,Perennial,depression spring,VIL-016,Alirajpur,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-023,22.90881,78.71379,570,12.9,813,0.57,agriculture,fractured_rock,1049,0.29,16.4,48.9,26.8,Seasonal,seep,VIL-017,Jhabua,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-024,22.86235,78.49925,604,4.1,865,0.55,agroforestry,sandstone,564,0.3,25.7,57.7,26.0,Perennial,seep,VIL-018,Betul,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-025,22.93835,78.67157,591,13.4,885,0.51,settlement,fractured_rock,181,0.47,22.3,50.2,27.2,Seasonal,depression spring,VIL-019,Seoni,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-026,22.84338,78.62658,501,15.5,919,0.69,grassland,sandstone,314,0.3,25.2,50.8,23.4,Seasonal,fracture spring,VIL-020,Chhindwara,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-027,22.95324,78.53732,435,7.1,827,0.5,forest,weathered_granite,775,0.67,9.7,53.9,29.9,Seasonal,depression spring,VIL-021,Anuppur,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-028,22.87687,78.72999,466,14.5,1078,0.21,settlement,sandstone,545,0.85,16.1,44.4,35.8,Seasonal,depression spring,VIL-022,Umaria,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-029,22.91115,78.48704,589,16.5,895,0.35,agriculture,sandstone,749,0.74,27.6,49.5,21.1,Seasonal,seep,VIL-023,Shahdol,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-030,22.87221,78.66276,548,4.3,871,0.68,agroforestry,weathered_granite,386,0.46,17.1,61.9,22.1,Perennial,depression spring,VIL-024,Balaghat,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-031,22.91257,78.60746,355,11.1,1099,0.39,agriculture,shale,730,0.7,33.6,49.7,29.4,Seasonal,fracture spring,VIL-013,Mandla,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-032,22.87216,78.57921,384,17.2,886,0.34,agriculture,sandstone,1061,0.67,29.0,44.5,33.4,Seasonal,seep,VIL-014,Dindori,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-033,22.96287,78.65227,622,8.6,1076,0.31,agriculture,shale,297,0.66,16.1,51.4,21.4,Seasonal,seep,VIL-015,Kukshi,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-034,22.84542,78.54785,461,10.6,836,0.67,grassland,fractured_rock,1058,0.61,30.4,51.7,23.8,Seasonal,contact spring,VIL-016,Alirajpur,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-035,22.90348,78.71259,582,10.0,1030,0.53,agriculture,weathered_granite,1030,0.32,20.2,51.6,22.7,Seasonal,depression spring,VIL-017,Jhabua,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-036,22.86509,78.49983,447,10.3,841,0.34,agroforestry,sandstone,972,0.54,21.9,47.9,32.0,Seasonal,depression spring,VIL-018,Betul,Madhya Pradesh,Madhya Pradesh Tribal Belt
+SPR-037,23.81966,73.52774,388,8.5,537,0.38,agroforestry,sandstone,773,0.34,37.4,38.9,33.2,Seasonal,depression spring,VIL-025,Udaipur Bhil,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-038,23.7949,73.48151,320,6.5,478,0.18,barren,shale,827,0.86,40.7,38.3,38.7,Seasonal,contact spring,VIL-026,Dungarpur,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-039,23.85674,73.5643,354,4.8,412,0.17,agriculture,sandstone,54,0.53,28.2,52.1,26.9,Seasonal,fracture spring,VIL-027,Banswara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-040,23.75414,73.45758,270,2.1,470,0.27,grassland,clay,307,0.79,23.4,47.7,31.2,Seasonal,seep,VIL-028,Dahod,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-041,23.86955,73.53933,439,2.9,459,0.3,settlement,clay,695,0.72,31.4,39.8,30.2,Seasonal,depression spring,VIL-029,Jhadol,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-042,23.76416,73.58363,371,9.4,683,0.17,agriculture,clay,206,0.24,22.3,39.2,32.4,Seasonal,depression spring,VIL-030,Kotra,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-043,23.82374,73.47194,391,9.0,525,0.34,barren,clay,702,0.63,48.0,28.9,38.2,Seasonal,fracture spring,VIL-031,Kherwara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-044,23.81225,73.6098,264,3.7,478,0.36,barren,sandstone,171,0.65,41.0,49.7,26.9,Seasonal,depression spring,VIL-032,Sagwara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-045,23.85813,73.42294,427,9.3,573,0.11,agriculture,clay,952,0.57,20.6,34.0,26.7,Seasonal,seep,VIL-033,Aspur,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-046,23.79789,73.61026,353,6.4,469,0.45,settlement,clay,1067,0.48,32.3,33.8,35.9,Seasonal,fracture spring,VIL-034,Sabarkantha,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-047,23.83489,73.50581,307,11.5,640,0.29,settlement,shale,382,0.88,32.1,31.4,33.9,Seasonal,depression spring,VIL-035,ChhotaUdepur,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-048,23.7574,73.53063,322,9.6,580,0.37,agriculture,clay,1023,0.45,40.9,39.4,39.6,Seasonal,fracture spring,VIL-036,Panchmahal,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-049,23.82629,73.51432,252,6.1,451,0.39,agriculture,clay,726,0.22,48.0,32.4,40.7,Seasonal,depression spring,VIL-025,Udaipur Bhil,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-050,23.79004,73.49441,298,7.5,502,0.42,settlement,clay,955,0.32,43.7,25.0,42.0,Seasonal,contact spring,VIL-026,Dungarpur,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-051,23.85962,73.54349,309,7.9,699,0.27,agriculture,clay,405,0.54,36.3,35.1,34.7,Seasonal,fracture spring,VIL-027,Banswara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-052,23.76442,73.44216,326,10.6,511,0.21,settlement,clay,444,0.89,43.8,33.8,32.3,Seasonal,seep,VIL-028,Dahod,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-053,23.86879,73.54396,316,3.0,650,0.13,barren,fractured_rock,192,0.8,49.1,52.1,30.9,Seasonal,contact spring,VIL-029,Jhadol,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-054,23.76516,73.58578,379,10.5,652,0.4,grassland,shale,801,0.71,46.2,40.1,32.3,Seasonal,contact spring,VIL-030,Kotra,Rajasthan,Rajasthan-Gujarat Bhil Belt
+SPR-055,26.13492,92.9274,947,14.3,2233,0.91,forest,weathered_granite,997,0.14,16.5,69.4,25.4,Seasonal,depression spring,VIL-037,Shillong Khasi,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-056,26.08198,92.88878,735,13.8,2470,0.82,forest,shale,191,0.47,7.3,74.2,20.6,Perennial,contact spring,VIL-038,Cherrapunji,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-057,26.15533,92.93974,953,19.9,2187,0.82,forest,fractured_rock,936,0.26,9.5,68.5,22.3,Perennial,contact spring,VIL-039,Kohima Naga,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-058,26.06478,92.84386,1382,27.1,1874,0.8,agroforestry,sandstone,91,0.59,11.4,73.4,18.4,Perennial,contact spring,VIL-040,Mokokchung,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-059,26.17157,92.9707,800,29.4,2367,0.84,forest,fractured_rock,705,0.13,16.4,68.4,22.9,Seasonal,contact spring,VIL-041,Aizawl Mizo,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-060,26.0148,92.81747,760,30.1,2476,0.73,agroforestry,fractured_rock,214,0.83,19.1,75.3,19.0,Perennial,seep,VIL-042,Imphal Kuki,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-061,26.13905,92.86726,1203,17.2,2276,0.84,forest,sandstone,630,0.17,9.7,68.8,24.0,Perennial,contact spring,VIL-043,Tawang Monpa,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-062,26.10254,92.94967,1352,14.5,1833,0.61,grassland,weathered_granite,1010,0.28,4.1,67.2,14.6,Seasonal,depression spring,VIL-044,Dimapur,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-063,26.0485,92.89636,629,34.9,1716,0.68,agroforestry,fractured_rock,433,0.86,14.8,64.5,22.1,Perennial,depression spring,VIL-045,Wokha,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-064,26.16465,92.87001,1092,33.6,1879,0.84,forest,weathered_granite,290,0.39,19.7,62.5,30.5,Perennial,seep,VIL-046,Tuensang,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-065,26.10694,92.95069,697,31.5,2054,0.83,agroforestry,weathered_granite,62,0.73,7.1,76.4,22.9,Seasonal,fracture spring,VIL-047,Jowai,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-066,26.03259,92.89939,786,29.8,2388,0.81,forest,clay,1086,0.53,16.6,62.4,29.3,Seasonal,contact spring,VIL-048,Nongpoh,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-067,26.1287,92.91214,859,16.0,1652,0.86,agroforestry,sandstone,544,0.72,11.7,76.9,22.1,Perennial,seep,VIL-037,Shillong Khasi,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-068,26.08682,92.89226,1127,18.9,2243,0.61,barren,sandstone,491,0.19,15.1,52.2,30.7,Seasonal,contact spring,VIL-038,Cherrapunji,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-069,26.15325,92.93697,820,26.6,2148,0.71,barren,weathered_granite,520,0.58,4.7,60.7,17.3,Perennial,fracture spring,VIL-039,Kohima Naga,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-070,26.0479,92.86164,931,31.0,1998,0.86,forest,fractured_rock,310,0.86,14.7,74.2,20.3,Seasonal,depression spring,VIL-040,Mokokchung,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-071,26.1679,92.98716,1249,24.8,2186,0.8,forest,fractured_rock,414,0.63,15.8,77.3,14.2,Perennial,contact spring,VIL-041,Aizawl Mizo,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-072,26.01555,92.82234,770,27.1,1824,0.64,grassland,fractured_rock,848,0.56,16.7,67.9,13.3,Perennial,seep,VIL-042,Imphal Kuki,Meghalaya-Nagaland,Northeast Tribal Belt
+SPR-073,11.82327,76.12473,946,8.6,2127,0.88,settlement,weathered_granite,232,0.21,13.2,76.3,22.1,Perennial,seep,VIL-049,Wayanad Kurichiya,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-074,11.78738,76.07145,809,15.5,2244,0.87,agriculture,weathered_granite,130,0.14,6.2,69.5,17.6,Seasonal,depression spring,VIL-050,Attappadi,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-075,11.84957,76.14826,736,24.6,1936,0.78,forest,sandstone,555,0.63,4.6,67.1,25.8,Seasonal,contact spring,VIL-051,Gadchiroli Madia,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-076,11.76336,76.05802,982,14.4,1943,0.8,forest,fractured_rock,604,0.28,11.8,73.0,17.2,Perennial,seep,VIL-052,Coorg Jenu,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-077,11.87809,76.12879,638,14.9,2315,0.77,agroforestry,weathered_granite,469,0.87,6.4,80.6,16.4,Perennial,contact spring,VIL-053,Banswara Ghat,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-078,11.75764,76.19033,721,21.0,2428,0.77,forest,weathered_granite,393,0.23,11.1,72.5,23.8,Perennial,contact spring,VIL-054,Nilambur,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-079,11.82553,76.09375,922,11.2,1923,0.73,forest,fractured_rock,844,0.16,17.3,69.5,18.5,Perennial,depression spring,VIL-055,Sirsi Siddi,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-080,11.80543,76.21146,921,29.7,2187,0.94,forest,weathered_granite,537,0.61,15.1,68.4,20.0,Seasonal,depression spring,VIL-056,Dandeli,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-081,11.85856,76.03671,1015,9.7,2837,0.91,agroforestry,weathered_granite,530,0.54,15.1,79.7,15.4,Perennial,fracture spring,VIL-057,Munnar Muthuvan,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-082,11.78465,76.13927,675,9.4,1924,0.92,forest,sandstone,574,0.24,7.5,71.9,22.5,Perennial,fracture spring,VIL-058,Agumbe Malekudiya,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-083,11.80592,76.10254,793,25.0,2614,0.67,agroforestry,weathered_granite,389,0.55,9.4,68.3,29.9,Perennial,fracture spring,VIL-059,Jawadhu Malayali,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-084,11.835,76.11248,670,15.7,2961,0.86,forest,weathered_granite,1034,0.35,9.3,72.9,13.4,Perennial,seep,VIL-060,Araku Bagata,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-085,11.82438,76.1177,780,16.0,2016,0.71,settlement,weathered_granite,280,0.21,5.1,67.0,21.0,Perennial,seep,VIL-049,Wayanad Kurichiya,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-086,11.78486,76.09129,909,21.1,1985,0.7,agroforestry,sandstone,996,0.68,4.6,64.5,28.2,Perennial,contact spring,VIL-050,Attappadi,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-087,11.85757,76.15851,717,13.3,2958,0.89,settlement,fractured_rock,759,0.56,10.2,72.5,13.7,Perennial,depression spring,VIL-051,Gadchiroli Madia,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-088,11.76399,76.05951,1000,11.0,2100,0.84,grassland,weathered_granite,148,0.78,15.9,77.9,25.4,Seasonal,fracture spring,VIL-052,Coorg Jenu,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-089,11.88993,76.11775,1055,26.0,2861,0.93,forest,weathered_granite,436,0.41,5.1,72.4,24.1,Seasonal,contact spring,VIL-053,Banswara Ghat,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-090,11.77874,76.16913,743,26.3,2635,0.69,agriculture,weathered_granite,45,0.16,7.6,68.3,17.8,Perennial,depression spring,VIL-054,Nilambur,Kerala-Karnataka,Western Ghats Tribal Belt
+SPR-091,13.50834,79.01364,420,5.8,817,0.61,agriculture,fractured_rock,999,0.58,10.5,53.7,26.9,Seasonal,fracture spring,VIL-061,Jawadhu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-092,13.47374,78.96505,441,14.7,724,0.55,agriculture,sandstone,1050,0.54,32.0,41.7,31.4,Seasonal,depression spring,VIL-062,Kalrayan,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-093,13.53631,79.04661,449,17.7,792,0.28,agroforestry,shale,149,0.57,31.2,45.8,32.7,Seasonal,contact spring,VIL-063,Pachamalai,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-094,13.45941,78.94025,611,12.9,928,0.53,grassland,fractured_rock,862,0.47,18.2,53.9,27.9,Seasonal,seep,VIL-064,Araku Valley,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-095,13.57447,79.0743,459,18.9,839,0.27,agriculture,weathered_granite,953,0.14,28.4,36.1,40.5,Seasonal,depression spring,VIL-065,Paderu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-096,13.48168,79.1073,657,11.6,1039,0.47,agriculture,clay,590,0.74,30.4,51.3,30.6,Seasonal,fracture spring,VIL-066,Sittilingi,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-097,13.53136,78.91464,332,16.2,772,0.52,agriculture,shale,412,0.13,34.4,31.8,46.2,Seasonal,contact spring,VIL-067,Kolli Hills,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-098,13.50418,79.04874,322,16.4,812,0.48,grassland,weathered_granite,73,0.78,29.0,51.9,28.6,Seasonal,fracture spring,VIL-068,Yelagiri,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-099,13.46836,79.05599,453,14.6,892,0.56,settlement,sandstone,848,0.56,24.8,41.4,35.0,Seasonal,fracture spring,VIL-069,Palamalai,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-100,13.57382,78.94578,374,13.8,1015,0.3,grassland,shale,267,0.59,29.4,49.4,28.7,Seasonal,fracture spring,VIL-070,Chitteri,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-101,13.52058,79.07856,659,12.6,685,0.56,grassland,sandstone,408,0.15,25.2,47.0,24.6,Seasonal,fracture spring,VIL-071,Shervaroy,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-102,13.49881,78.99026,348,8.4,705,0.61,forest,shale,431,0.74,25.4,51.0,27.1,Seasonal,contact spring,VIL-072,BR Hills Soliga,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-103,13.51694,79.02651,491,12.0,813,0.51,forest,sandstone,118,0.47,24.5,58.9,30.8,Perennial,fracture spring,VIL-061,Jawadhu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-104,13.48803,78.96887,501,19.8,982,0.48,agroforestry,weathered_granite,1030,0.28,36.5,42.8,30.6,Seasonal,seep,VIL-062,Kalrayan,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-105,13.54252,79.05405,520,7.1,771,0.49,agriculture,weathered_granite,1038,0.22,28.4,43.8,25.3,Seasonal,seep,VIL-063,Pachamalai,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-106,13.45976,78.93585,318,15.9,880,0.54,grassland,sandstone,717,0.5,27.6,44.0,40.3,Seasonal,depression spring,VIL-064,Araku Valley,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-107,13.57235,79.08922,462,12.7,925,0.32,agriculture,sandstone,400,0.21,34.1,40.3,42.7,Seasonal,contact spring,VIL-065,Paderu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-108,13.48426,79.08892,448,14.5,777,0.46,agroforestry,weathered_granite,142,0.33,20.8,49.3,26.7,Seasonal,fracture spring,VIL-066,Sittilingi,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+SPR-109,19.5294,80.23301,552,8.8,929,0.8,agriculture,clay,567,0.17,16.8,45.3,30.9,Seasonal,contact spring,VIL-073,Nandurbar Bhil,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-110,19.46646,80.17344,509,21.9,1186,0.44,forest,fractured_rock,181,0.31,16.1,59.3,25.9,Seasonal,fracture spring,VIL-074,Dhadgaon,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-111,19.54588,80.24366,435,14.0,1124,0.71,agriculture,sandstone,176,0.18,16.3,61.5,24.1,Perennial,fracture spring,VIL-075,Toranmal,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-112,19.44097,80.15027,475,5.9,918,0.47,agriculture,sandstone,682,0.51,15.2,51.0,26.6,Seasonal,contact spring,VIL-076,Bastar Muria,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-113,19.58281,80.28022,478,14.8,1131,0.54,forest,weathered_granite,156,0.43,14.7,67.8,17.5,Perennial,depression spring,VIL-077,Gadchiroli,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-114,19.46297,80.30467,640,16.6,963,0.33,agriculture,sandstone,804,0.72,16.5,48.8,26.2,Seasonal,seep,VIL-078,Dantewada,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-115,19.52072,80.17823,446,13.3,951,0.55,agriculture,sandstone,939,0.68,24.6,46.7,29.1,Seasonal,depression spring,VIL-079,Sukma,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-116,19.50076,80.23441,360,23.2,1021,0.48,grassland,shale,721,0.65,22.3,44.7,33.2,Seasonal,contact spring,VIL-080,Bijapur,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-117,19.45175,80.23419,404,10.8,953,0.65,agroforestry,weathered_granite,1029,0.74,13.8,61.4,28.7,Perennial,depression spring,VIL-081,Narayanpur,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-118,19.56955,80.16364,581,10.8,993,0.66,agroforestry,weathered_granite,311,0.48,12.1,54.1,24.8,Seasonal,contact spring,VIL-082,Kanker,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-119,19.49912,80.28347,505,9.8,1184,0.57,agriculture,fractured_rock,478,0.67,9.5,65.3,22.7,Perennial,fracture spring,VIL-083,Rajura,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-120,19.48721,80.20305,607,14.5,949,0.78,agroforestry,sandstone,1002,0.17,21.4,45.7,28.6,Seasonal,seep,VIL-084,Melghat Korku,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-121,19.5324,80.21025,608,8.5,1309,0.8,agroforestry,sandstone,1032,0.87,30.2,67.7,21.9,Perennial,seep,VIL-073,Nandurbar Bhil,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-122,19.49285,80.17505,459,17.8,1112,0.74,forest,sandstone,329,0.75,15.3,63.3,18.1,Perennial,seep,VIL-074,Dhadgaon,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-123,19.5571,80.25872,498,20.1,937,0.73,settlement,shale,586,0.17,23.7,41.2,33.6,Seasonal,contact spring,VIL-075,Toranmal,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-124,19.46307,80.1352,434,13.9,983,0.46,agriculture,sandstone,317,0.39,12.9,50.1,24.6,Seasonal,fracture spring,VIL-076,Bastar Muria,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-125,19.57716,80.28008,613,19.1,1005,0.36,settlement,weathered_granite,691,0.28,10.3,46.1,35.3,Seasonal,contact spring,VIL-077,Gadchiroli,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+SPR-126,19.46748,80.30148,464,15.8,1182,0.41,forest,shale,965,0.17,18.2,48.1,27.6,Seasonal,seep,VIL-078,Dantewada,Maharashtra,Maharashtra-Chhattisgarh Central Belt

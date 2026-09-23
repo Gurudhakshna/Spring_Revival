@@ -1,0 +1,22 @@
+﻿# Secrets
+.env
+backend/.env
+*.pkl
+model/recharge_rf.pkl
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+backend/data_backup/
+data_backup_gumla/
+model_backup/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# OS
+.DS_Store
+Thumbs.db

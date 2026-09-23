@@ -1,0 +1,106 @@
+well_id,latitude,longitude,depth_m,water_level_m,well_type,nearby_village_id,nearby_village,state,tribal_belt
+WELL-001,23.50148,84.90314,26.7,15.7,open well,VIL-001,Hesatu,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-002,23.46295,85.02051,24.3,15.6,handpump,VIL-003,Kulhi,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-003,23.43,84.93518,26.9,18.9,borewell,VIL-005,Toto,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-004,23.47717,84.92297,28.9,16.7,handpump,VIL-007,Ambatoli,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-005,23.43837,84.92036,22.7,16.1,handpump,VIL-009,Puto,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-006,23.51823,84.94475,23.7,15.4,handpump,VIL-011,Chirgora,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-007,23.52386,84.91243,10.6,8.1,open well,VIL-001,Hesatu,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-008,23.46589,85.00432,13.0,8.1,handpump,VIL-003,Kulhi,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-009,23.4315,84.94309,44.7,22.0,borewell,VIL-005,Toto,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-010,23.48302,84.92939,32.5,18.5,handpump,VIL-007,Ambatoli,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-011,23.43965,84.90585,44.7,22.2,open well,VIL-009,Puto,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-012,23.53047,84.94834,8.1,2.5,borewell,VIL-011,Chirgora,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-013,23.51111,84.90726,23.7,11.6,open well,VIL-001,Hesatu,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-014,23.46494,85.00831,18.2,14.0,handpump,VIL-003,Kulhi,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-015,23.43437,84.93377,32.4,19.7,open well,VIL-005,Toto,Jharkhand,Jharkhand-Odisha-Chhattisgarh Belt
+WELL-016,22.91378,78.60961,27.0,14.1,handpump,VIL-013,Mandla,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-017,22.95488,78.63917,31.7,15.9,open well,VIL-015,Kukshi,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-018,22.90095,78.70611,32.8,12.1,borewell,VIL-017,Jhabua,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-019,22.92362,78.68999,26.4,15.5,handpump,VIL-019,Seoni,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-020,22.96764,78.54369,36.0,28.5,handpump,VIL-021,Anuppur,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-021,22.90331,78.47521,10.0,7.7,handpump,VIL-023,Shahdol,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-022,22.92988,78.62302,21.7,11.9,borewell,VIL-013,Mandla,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-023,22.9606,78.65411,33.1,15.2,borewell,VIL-015,Kukshi,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-024,22.8978,78.6952,13.9,7.9,open well,VIL-017,Jhabua,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-025,22.93838,78.67522,30.6,21.5,open well,VIL-019,Seoni,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-026,22.9615,78.56123,25.8,9.5,open well,VIL-021,Anuppur,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-027,22.90412,78.47593,10.5,5.5,borewell,VIL-023,Shahdol,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-028,22.91022,78.62539,14.1,6.1,handpump,VIL-013,Mandla,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-029,22.95252,78.63895,10.3,7.2,handpump,VIL-015,Kukshi,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-030,22.90538,78.70141,23.3,17.1,borewell,VIL-017,Jhabua,Madhya Pradesh,Madhya Pradesh Tribal Belt
+WELL-031,23.81528,73.52982,25.3,10.0,handpump,VIL-025,Udaipur Bhil,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-032,23.84082,73.56199,32.0,13.5,handpump,VIL-027,Banswara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-033,23.88489,73.52752,26.0,12.0,borewell,VIL-029,Jhadol,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-034,23.82714,73.48081,29.0,12.5,handpump,VIL-031,Kherwara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-035,23.86919,73.41918,40.1,26.5,borewell,VIL-033,Aspur,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-036,23.84994,73.4969,30.3,17.6,open well,VIL-035,ChhotaUdepur,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-037,23.82579,73.50839,33.8,20.0,handpump,VIL-025,Udaipur Bhil,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-038,23.84802,73.54166,28.2,13.8,open well,VIL-027,Banswara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-039,23.87998,73.53371,37.1,15.9,borewell,VIL-029,Jhadol,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-040,23.8412,73.4834,32.3,12.4,borewell,VIL-031,Kherwara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-041,23.85206,73.42529,32.2,24.4,handpump,VIL-033,Aspur,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-042,23.85177,73.51097,33.1,23.8,open well,VIL-035,ChhotaUdepur,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-043,23.83068,73.52404,39.1,19.8,handpump,VIL-025,Udaipur Bhil,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-044,23.84355,73.55497,20.2,11.2,borewell,VIL-027,Banswara,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-045,23.86945,73.53331,43.3,32.8,handpump,VIL-029,Jhadol,Rajasthan,Rajasthan-Gujarat Bhil Belt
+WELL-046,26.11971,92.90816,17.4,5.3,handpump,VIL-037,Shillong Khasi,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-047,26.15533,92.95086,12.9,7.1,handpump,VIL-039,Kohima Naga,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-048,26.18418,92.98735,23.5,8.3,open well,VIL-041,Aizawl Mizo,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-049,26.14059,92.87378,18.5,7.9,borewell,VIL-043,Tawang Monpa,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-050,26.05442,92.90753,14.3,7.2,handpump,VIL-045,Wokha,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-051,26.10384,92.96473,13.1,9.4,open well,VIL-047,Jowai,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-052,26.12369,92.9286,20.9,7.2,borewell,VIL-037,Shillong Khasi,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-053,26.14705,92.94942,18.8,12.2,open well,VIL-039,Kohima Naga,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-054,26.18,92.97841,21.3,12.4,open well,VIL-041,Aizawl Mizo,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-055,26.14947,92.89006,11.9,8.9,handpump,VIL-043,Tawang Monpa,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-056,26.0693,92.90941,8.8,3.0,borewell,VIL-045,Wokha,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-057,26.11958,92.96152,8.6,6.6,borewell,VIL-047,Jowai,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-058,26.10838,92.91297,10.5,7.5,borewell,VIL-037,Shillong Khasi,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-059,26.16029,92.94518,17.6,10.3,borewell,VIL-039,Kohima Naga,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-060,26.18425,92.98097,14.5,9.7,handpump,VIL-041,Aizawl Mizo,Meghalaya-Nagaland,Northeast Tribal Belt
+WELL-061,11.82538,76.12002,22.6,7.4,borewell,VIL-049,Wayanad Kurichiya,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-062,11.84357,76.13982,17.1,10.4,handpump,VIL-051,Gadchiroli Madia,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-063,11.87752,76.13657,8.4,3.7,borewell,VIL-053,Banswara Ghat,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-064,11.82977,76.07654,22.1,11.4,handpump,VIL-055,Sirsi Siddi,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-065,11.86206,76.04712,19.6,8.8,open well,VIL-057,Munnar Muthuvan,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-066,11.81511,76.07997,10.3,6.8,handpump,VIL-059,Jawadhu Malayali,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-067,11.8117,76.11735,13.4,4.6,borewell,VIL-049,Wayanad Kurichiya,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-068,11.84867,76.15627,9.5,3.3,borewell,VIL-051,Gadchiroli Madia,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-069,11.87877,76.13131,14.1,4.4,borewell,VIL-053,Banswara Ghat,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-070,11.8313,76.08233,19.8,14.5,open well,VIL-055,Sirsi Siddi,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-071,11.855,76.04731,9.3,7.0,open well,VIL-057,Munnar Muthuvan,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-072,11.81173,76.08207,13.7,5.1,borewell,VIL-059,Jawadhu Malayali,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-073,11.81444,76.1115,10.5,4.6,borewell,VIL-049,Wayanad Kurichiya,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-074,11.84962,76.13985,11.8,5.0,handpump,VIL-051,Gadchiroli Madia,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-075,11.8799,76.1328,14.9,5.5,open well,VIL-053,Banswara Ghat,Kerala-Karnataka,Western Ghats Tribal Belt
+WELL-076,13.53077,79.01597,30.5,21.4,borewell,VIL-061,Jawadhu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-077,13.54857,79.04833,37.2,23.3,handpump,VIL-063,Pachamalai,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-078,13.57127,79.0757,41.3,16.5,borewell,VIL-065,Paderu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-079,13.52226,78.91756,20.5,13.7,handpump,VIL-067,Kolli Hills,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-080,13.45978,79.06182,18.0,8.8,borewell,VIL-069,Palamalai,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-081,13.50676,79.09037,16.6,13.3,open well,VIL-071,Shervaroy,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-082,13.52436,79.0212,41.4,22.0,handpump,VIL-061,Jawadhu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-083,13.54303,79.05714,37.4,12.5,borewell,VIL-063,Pachamalai,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-084,13.58415,79.07134,20.0,8.5,open well,VIL-065,Paderu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-085,13.53517,78.92694,12.4,9.9,borewell,VIL-067,Kolli Hills,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-086,13.46197,79.06082,40.5,29.8,borewell,VIL-069,Palamalai,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-087,13.51105,79.08698,21.9,16.4,handpump,VIL-071,Shervaroy,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-088,13.52225,79.02995,13.6,5.8,handpump,VIL-061,Jawadhu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-089,13.54652,79.05353,11.5,9.1,handpump,VIL-063,Pachamalai,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-090,13.58352,79.0912,20.9,14.6,open well,VIL-065,Paderu,Tamil Nadu,Tamil Nadu-Andhra Tribal Belt
+WELL-091,19.50825,80.21421,22.8,12.8,handpump,VIL-073,Nandurbar Bhil,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-092,19.5545,80.2433,18.8,10.0,handpump,VIL-075,Toranmal,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-093,19.58213,80.28001,18.0,5.6,open well,VIL-077,Gadchiroli,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-094,19.52509,80.19009,10.5,7.5,handpump,VIL-079,Sukma,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-095,19.4514,80.21549,21.2,8.6,borewell,VIL-081,Narayanpur,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-096,19.50636,80.27034,28.9,15.2,open well,VIL-083,Rajura,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-097,19.51521,80.22744,11.3,8.2,handpump,VIL-073,Nandurbar Bhil,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-098,19.54062,80.2572,35.0,23.5,handpump,VIL-075,Toranmal,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-099,19.57219,80.27184,24.2,18.9,open well,VIL-077,Gadchiroli,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-100,19.53715,80.18311,13.4,8.4,borewell,VIL-079,Sukma,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-101,19.4487,80.22274,13.7,8.2,borewell,VIL-081,Narayanpur,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-102,19.49811,80.27316,16.1,10.5,open well,VIL-083,Rajura,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-103,19.52186,80.22719,23.6,11.4,open well,VIL-073,Nandurbar Bhil,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-104,19.54898,80.2443,33.0,18.6,handpump,VIL-075,Toranmal,Maharashtra,Maharashtra-Chhattisgarh Central Belt
+WELL-105,19.57552,80.27733,19.4,6.9,borewell,VIL-077,Gadchiroli,Maharashtra,Maharashtra-Chhattisgarh Central Belt

@@ -1,0 +1,9 @@
+type,name,unit,unit_cost_inr,min_qty,max_qty,default_qty,effectiveness,description
+recharge_trench,Recharge Trench,per structure,45000,30,200,100,0.14,Contour-aligned trench to capture runoff and enhance infiltration.
+check_dam,Check Dam,per structure,280000,1,5,1,0.2,Small barrier across seasonal stream to slow flow and recharge downstream springs.
+percolation_pond,Percolation Pond,per pond,180000,1,4,1,0.17,Excavated pond that stores monsoon runoff for slow percolation.
+contour_trench,Contour Trench,per hectare,60000,1,20,5,0.12,Staggered trenches along contours to reduce runoff on slopes.
+vegetation_restoration,Vegetation Restoration,per hectare,35000,2,30,8,0.1,Native species plantation to improve soil moisture and baseflow.
+spring_shed_treatment,Spring-shed Treatment,per hectare,40000,2,15,5,0.13,Comprehensive treatment of springshed catchment including vegetative and engineering measures.
+drainage_treatment,Drainage Treatment,per structure,95000,1,8,2,0.11,Channelization and treatment of drainage lines to reduce erosion and improve percolation.
+infiltration_gallery,Infiltration Gallery,per structure,120000,1,6,1,0.15,Subsurface gallery to collect and infiltrate monsoon runoff into aquifer.
