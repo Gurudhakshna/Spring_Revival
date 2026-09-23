@@ -916,6 +916,76 @@ def tribal_belt_rainfall():
     except Exception:
         return {"belts":{}, **_friendly("tribal belt rainfall")}
 
+# ============ SMART CROP ADVISOR (Water-Aware) ============
+@router.get("/crop-advisor")
+def crop_advisor(spring_id: Optional[str]=None, district: Optional[str]=None, recharge: Optional[float]=None, rainfall: Optional[float]=None, soil_moisture: Optional[float]=None, early_risk: Optional[str]=None):
+    try:
+        from services import crop_advisor as ca
+        if spring_id:
+            s = _spring_by_id(spring_id)
+            if not s:
+                return {"detail": f"Spring {spring_id} not found."}
+            # Try to get early warning risk for this spring's nearest station
+            risk = early_risk
+            if not risk:
+                try:
+                    # Find nearest station risk via community report linkage? Use ew
+                    pass
+                except: pass
+            res = ca.for_spring(s, early_risk=risk)
+            res["spring_id"] = spring_id
+            res["spring"] = {"spring_id": s.get("spring_id"), "state": s.get("state"), "nearby_village": s.get("nearby_village"), "recharge_suitability": s.get("recharge_suitability"), "annual_rainfall_mm": s.get("annual_rainfall_mm")}
+            return res
+        if recharge is not None and rainfall is not None:
+            from services import crop_advisor as ca
+            res = ca.recommend(float(recharge), float(rainfall), float(soil_moisture or 0.5), district=district, early_risk=early_risk)
+            return res
+        return {"detail":"Provide spring_id or recharge+rainfall"}
+    except Exception as e:
+        return {"detail": f"Crop advisor failed: {e}"}
+
+@router.post("/crop-advisor")
+def crop_advisor_post(body: Dict[str,Any]):
+    try:
+        from services import crop_advisor as ca
+        if body.get("spring_id"):
+            s = _spring_by_id(str(body.get("spring_id")))
+            if not s: return {"detail": f"Spring {body.get('spring_id')} not found."}
+            res = ca.for_spring(s, early_risk=body.get("early_risk"))
+            res["spring_id"] = body.get("spring_id")
+            return res
+        res = ca.recommend(float(body.get("recharge") or 50), float(body.get("rainfall") or 800), float(body.get("soil_moisture") or 0.5), district=body.get("district"), early_risk=body.get("early_risk"))
+        return res
+    except Exception as e:
+        return {"detail": f"Crop advisor failed: {e}"}
+
+@router.post("/crop-advisor/explain")
+def crop_advisor_explain(body: Dict[str,Any]):
+    try:
+        from services import crop_advisor as ca
+        from services import llm as llm_svc
+        # Get recommendation
+        if body.get("spring_id"):
+            s = _spring_by_id(str(body.get("spring_id")))
+            if not s: return {"detail": "Spring not found"}
+            rec = ca.for_spring(s, early_risk=body.get("early_risk"))
+            rec["spring_id"] = body.get("spring_id")
+        else:
+            rec = ca.recommend(float(body.get("recharge") or 50), float(body.get("rainfall") or 800), float(body.get("soil_moisture") or 0.5), district=body.get("district"), early_risk=body.get("early_risk"))
+        # Build prompt for LLM
+        prompt_data = {"recharge": body.get("recharge"), "rainfall": body.get("rainfall"), "district": body.get("district"), "recommended": [c["crop"] for c in rec.get("recommended",[])[:3]], "avoid": [c["crop"] for c in rec.get("avoid",[])[:2]]}
+        # Use LLM to generate farmer-friendly explanation
+        llm_input = {"spring_id": body.get("spring_id") or body.get("district") or "area", "score": body.get("recharge") or 50, "class": "MEDIUM", "factors": {"rainfall": body.get("rainfall") or 800, "recharge": body.get("recharge") or 50}, "why": [f"Recommend {prompt_data['recommended']}", f"Avoid {prompt_data['avoid']}"]}
+        txt = llm_svc.explain_analysis(llm_input)
+        # If LLM fallback, make crop-specific
+        if "[via" not in txt:
+            txt = f"For rainfall {prompt_data['rainfall']}mm and recharge {prompt_data['recharge']}%, recommended: {', '.join(prompt_data['recommended'])}. Avoid: {', '.join(prompt_data['avoid'])}. {txt}"
+        else:
+            txt = f"Crop advice for {body.get('district') or body.get('spring_id')}: {txt} Recommended: {', '.join(prompt_data['recommended'])}."
+        return {"explanation": txt, "provider": llm_svc.provider_name(), "has_key": llm_svc.has_key(), "recommendation": rec}
+    except Exception as e:
+        return {"detail": f"Explain failed: {e}"}
+
 # ============ FEATURE 2: community reporting ============
 @router.post("/community-reports")
 def cr_create(body: CommunityReportCreate):
