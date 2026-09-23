@@ -11,6 +11,7 @@ import ReportsPage from './pages/ReportsPage';
 import AIAnalysisPage from './pages/AIAnalysisPage';
 import DataPage from './pages/DataPage';
 import FieldPage from './pages/FieldPage';
+import CropAdvisorPage from './pages/CropAdvisorPage';
 import AboutPage from './pages/AboutPage';
 import './index.css';
 
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="planner" element={<PlannerPage />} />
           <Route path="ai" element={<AIAnalysisPage />} />
           <Route path="field" element={<FieldPage />} />
+          <Route path="crop" element={<CropAdvisorPage />} />
           <Route path="data" element={<DataPage />} />
           <Route path="about" element={<AboutPage />} />
         </Route>

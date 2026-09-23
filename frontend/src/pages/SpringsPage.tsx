@@ -169,8 +169,9 @@ export default function SpringsPage() {
                 <div className="mt-3 p-2 bg-amber-50 border border-amber-200 rounded text-xs">
                   <b>Recommended:</b> {analysis.recommendation.type} — {analysis.recommendation.why}
                 </div>
-                <div className="flex gap-2 mt-2">
-                  <button onClick={()=> window.location.href=`/planner?spring=${analysis.spring_id}&type=${analysis.recommendation.type}`} className="text-xs font-semibold bg-emerald-700 text-white rounded px-3 py-1.5">Simulate this → Planner</button>
+                <div className="flex gap-2 mt-2 flex-wrap">
+                  <button onClick={()=> window.location.href=`/planner?spring=${analysis.spring_id}&type=${analysis.recommendation.type}`} className="text-xs font-semibold bg-emerald-700 text-white rounded px-3 py-1.5">Simulate → Planner</button>
+                  <button onClick={()=> window.location.href=`/crop?spring=${analysis.spring_id}`} className="text-xs font-semibold bg-green-600 text-white rounded px-3 py-1.5">🌱 Crop Advisor</button>
                   <button onClick={async()=>{ const r=await fetch(`/api/analysis/${analysis.spring_id}/explain`,{method:'POST'}); const j=await r.json(); alert(j.explanation); }} className="text-xs border rounded px-3 py-1.5">Explain (AI)</button>
                 </div>
               </Card>

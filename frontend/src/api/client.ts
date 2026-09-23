@@ -103,6 +103,12 @@ export const api = {
     const s=p.toString(); return req<any>(`/api/soil${s?`?${s}`:''}`);
   },
   tribalBeltRainfall: () => req<any>('/api/tribal-belt/rainfall'),
+  cropAdvisor: (q?: {spring_id?:string; district?:string; recharge?:number; rainfall?:number; soil_moisture?:number; early_risk?:string}) => {
+    const p=new URLSearchParams(); if(q?.spring_id) p.set('spring_id',q.spring_id); if(q?.district) p.set('district',q.district); if(q?.recharge!==undefined) p.set('recharge',String(q.recharge)); if(q?.rainfall!==undefined) p.set('rainfall',String(q.rainfall)); if(q?.soil_moisture!==undefined) p.set('soil_moisture',String(q.soil_moisture)); if(q?.early_risk) p.set('early_risk',q.early_risk);
+    const s=p.toString(); return req<any>(`/api/crop-advisor${s?`?${s}`:''}`);
+  },
+  cropAdvisorPost: (body:any) => req<any>('/api/crop-advisor',{method:'POST', body:JSON.stringify(body)}),
+  cropAdvisorExplain: (body:any) => req<any>('/api/crop-advisor/explain',{method:'POST', body:JSON.stringify(body)}),
   // ---- Feature 1: groundwater early warning (real dataset, AI/Prototype Decision Support)
   ewStatus: () => req<any>('/api/early-warning/status'),
   ewSummary: (limit = 100) => req<any>(`/api/early-warning/summary?limit=${limit}`),
