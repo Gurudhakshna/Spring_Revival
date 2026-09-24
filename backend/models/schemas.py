@@ -32,7 +32,7 @@ class InterventionSimulateRequest(BaseModel):
     latitude: Optional[float] = None
     longitude: Optional[float] = None
     spring_id: Optional[str] = None
-    quantity: float = Field(default=1, gt=0, le=100)
+    quantity: float = Field(default=1, gt=0, le=500)
     base_score: Optional[float] = None
 
 
