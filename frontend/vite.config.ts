@@ -1,14 +1,30 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// Use VITE_API_URL in production, fallback to /api proxy in dev
+const apiTarget = process.env.VITE_API_URL || 'http://localhost:8000';
+
 export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: apiTarget,
         changeOrigin: true,
+      },
+    },
+  },
+  build: {
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          motion: ['framer-motion'],
+          map: ['leaflet', 'react-leaflet'],
+          charts: ['recharts'],
+        },
       },
     },
   },

@@ -36,9 +36,14 @@ app = FastAPI(title="JAL-RAKSHA AI",
               description="AI-powered spring revival & recharge planning (prototype decision support)",
               version="0.1.0", lifespan=lifespan)
 
+# Secure CORS: env or fallback to localhost only (never "*" with credentials)
+# In production, set CORS_ORIGINS to your Vercel domain(s)
+_cors_env = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
+_cors_origins = [o.strip() for o in _cors_env.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "*"],
+    allow_origins=_cors_origins,
     allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
 )
 

@@ -5,12 +5,15 @@ export interface Village { village_id: string; name: string; latitude: number; l
 export interface Well { well_id: string; latitude: number; longitude: number; [k: string]: any }
 export interface GridPoint { id: string; latitude: number; longitude: number; score: number; class: string }
 
+// In production (Vercel), use VITE_API_URL. In dev, use Vite proxy (/api).
+const API_BASE = import.meta.env.VITE_API_URL || '';
+
 async function req<T>(path: string, init?: RequestInit): Promise<T> {
   let res: Response;
   try {
-    res = await fetch(path, { headers: { 'Content-Type': 'application/json' }, ...init });
+    res = await fetch(`${API_BASE}${path}`, { headers: { 'Content-Type': 'application/json' }, ...init });
   } catch {
-    throw new Error('Backend unavailable at localhost:8000. Start it with start-backend (see README).');
+    throw new Error('Backend unavailable. Check VITE_API_URL or start backend locally.');
   }
   if (!res.ok) throw new Error(`Request failed (${res.status}) for ${path}`);
   return res.json() as Promise<T>;
