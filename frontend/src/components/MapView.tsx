@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Circle, CircleMarker, MapContainer, Marker, Popup, ScaleControl, TileLayer, Tooltip, useMap, useMapEvents } from 'react-leaflet';
+import { useEffect } from 'react';
+import { Circle, CircleMarker, MapContainer, Marker, Popup, TileLayer, Tooltip, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { reportColor, riskColor, scoreColor } from '../api/client';
 
@@ -20,21 +20,6 @@ function Invalidate() {
     return () => clearTimeout(t);
   }, [map]);
   return null;
-}
-
-function Coords() {
-  const [c, setC] = useState<{lat:number;lon:number}|null>(null);
-  useMapEvents({
-    mousemove(e){ setC({lat: e.latlng.lat, lon: e.latlng.lng}); },
-  });
-  if(!c) return null;
-  return (
-    <div className="leaflet-bottom leaflet-left" style={{pointerEvents:'none'}}>
-      <div className="leaflet-control bg-white/90 text-[11px] px-2 py-1 rounded shadow border border-slate-200" style={{margin:'0 0 10px 10px'}}>
-        {c.lat.toFixed(4)}, {c.lon.toFixed(4)}
-      </div>
-    </div>
-  );
 }
 
 function Legend() {
@@ -78,7 +63,7 @@ export default function MapView({ springs, villages, wells, grid, interventions,
   return (
     <MapContainer center={center || [23.46, 84.96]} zoom={zoom || 11} style={{ height, width: '100%', minHeight: 420 }} scrollWheelZoom>
       <TileLayer attribution='&copy; OpenStreetMap contributors' url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <Invalidate /><FlyTo focus={focus} /><Legend /><ScaleControl position="bottomleft" /><Coords />
+      <Invalidate /><FlyTo focus={focus} /><Legend />
       {layers.recharge && grid.map((g) => (
         <CircleMarker key={g.id} center={[g.latitude, g.longitude]} radius={7}
           pathOptions={{ color: scoreColor(g.score), fillColor: scoreColor(g.score), fillOpacity: 0.45, weight: 1 }}>

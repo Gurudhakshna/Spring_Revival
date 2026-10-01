@@ -12,17 +12,4 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          motion: ['framer-motion'],
-          map: ['leaflet', 'react-leaflet'],
-          charts: ['recharts'],
-        },
-      },
-    },
-  },
 });

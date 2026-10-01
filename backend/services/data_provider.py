@@ -120,8 +120,6 @@ class CSVDatasetProvider(DataProvider):
                 "spring_type": (r.get("spring_type") or "spring").strip(),
                 "nearby_village_id": (r.get("nearby_village_id") or "").strip(),
                 "nearby_village": (r.get("nearby_village") or "").strip(),
-                "state": (r.get("state") or "Jharkhand").strip(),
-                "tribal_belt": (r.get("tribal_belt") or "Jharkhand-Odisha-Chhattisgarh Belt").strip(),
             })
         return out
 
@@ -144,8 +142,6 @@ class CSVDatasetProvider(DataProvider):
                 "well_type": (r.get("well_type") or "well").strip(),
                 "nearby_village_id": (r.get("nearby_village_id") or "").strip(),
                 "nearby_village": (r.get("nearby_village") or "").strip(),
-                "state": (r.get("state") or "Jharkhand").strip(),
-                "tribal_belt": (r.get("tribal_belt") or "Jharkhand-Odisha-Chhattisgarh Belt").strip(),
             })
         return out
 

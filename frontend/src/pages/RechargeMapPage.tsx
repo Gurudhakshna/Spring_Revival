@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../api/client';
 import MapView, { ALL_LAYERS, Focus, MapLayers } from '../components/MapView';
-import { btnGhost, btnPrimary, Card, Err, Field, inputCls, Loading, Modal } from '../components/ui';
-import { useStudyArea } from '../App';
+import { btnGhost, btnPrimary, Card, Err, Field, inputCls, Loading } from '../components/ui';
 
 const LAYER_LABELS: [keyof MapLayers, string][] = [
   ['villages', 'Villages'], ['springs', 'Springs'], ['wells', 'Wells'],
@@ -13,20 +12,8 @@ const LAYER_LABELS: [keyof MapLayers, string][] = [
 const LU = ['forest', 'agroforestry', 'agriculture', 'grassland', 'settlement', 'barren'];
 const GEO = ['fractured_rock', 'weathered_granite', 'sandstone', 'shale', 'clay'];
 
-const BELTS = [
-  {id:'', name:'All Tribal Belts (Pan-India)', center:[20.5,80.0] as [number,number], zoom:5},
-  {id:'jhk', name:'Jharkhand-Odisha-Chhattisgarh', center:[23.45,84.95] as [number,number], zoom:10},
-  {id:'mp', name:'Madhya Pradesh', center:[22.90,78.60] as [number,number], zoom:9},
-  {id:'rj', name:'Rajasthan-Gujarat Bhil', center:[23.80,73.50] as [number,number], zoom:9},
-  {id:'ne', name:'Northeast (Meghalaya-Nagaland)', center:[26.10,92.90] as [number,number], zoom:8},
-  {id:'ghats', name:'Western Ghats (Kerala-Karnataka)', center:[11.80,76.10] as [number,number], zoom:8},
-  {id:'tn', name:'Tamil Nadu-Andhra', center:[13.50,79.00] as [number,number], zoom:8},
-  {id:'mh', name:'Maharashtra-Chhattisgarh', center:[19.50,80.20] as [number,number], zoom:8},
-];
-
 export default function RechargeMapPage() {
   const nav = useNavigate();
-  const { area } = useStudyArea();
   const [springs, setSprings] = useState<any[]>([]);
   const [villages, setVillages] = useState<any[]>([]);
   const [wells, setWells] = useState<any[]>([]);
@@ -34,41 +21,18 @@ export default function RechargeMapPage() {
   const [layers, setLayers] = useState<MapLayers>({ ...ALL_LAYERS });
   const [search, setSearch] = useState('');
   const [focus, setFocus] = useState<Focus | undefined>();
-  const [belt, setBelt] = useState<string>(() => localStorage.getItem('jr-belt') || '');
-  const [center, setCenter] = useState<[number,number]>(BELTS.find(b=>b.id===belt)?.center || [23.46,84.96]);
-  const [zoom, setZoom] = useState(BELTS.find(b=>b.id===belt)?.zoom || 6);
-  const [selected, setSelected] = useState<any>(null);
   const [err, setErr] = useState('');
-  const [modal, setModal] = useState<{ open: boolean; title: string; content: React.ReactNode }>({ open: false, title: '', content: null });
   const [form, setForm] = useState({ rainfall: 1200, slope: 12, soil_moisture: 0.7, land_use: 'forest', geology: 'fractured_rock', distance_to_stream: 250, lineament_density: 0.8, groundwater_depth: 15 });
-
   const [calc, setCalc] = useState<any>(null);
   const [calcErr, setCalcErr] = useState('');
 
-  const load = (beltId = belt) => {
+  const load = () => {
     setErr('');
-    const q = beltId ? {belt_id: beltId} : undefined;
-    Promise.all([api.springs(q), api.villages(q), api.wells(q), api.rechargeMap(q ? {belt_id: beltId} : undefined)])
+    Promise.all([api.springs(), api.villages(), api.wells(), api.rechargeMap()])
       .then(([s, v, w, m]) => { setSprings(s.springs); setVillages(v.villages); setWells(w.wells); setGrid(m.grid); })
       .catch((e) => setErr(e.message));
   };
-  useEffect(()=>{ load(); }, []);
-  useEffect(()=>{ localStorage.setItem('jr-belt', belt); }, [belt]);
-  useEffect(() => {
-    if (area && area !== 'all' && area !== belt) {
-      onBeltChange(area);
-    } else if (area === 'all' && belt) {
-      onBeltChange('');
-    }
-  }, [area]);
-
-  const onBeltChange = (id: string) => {
-    setBelt(id);
-    const b = BELTS.find(x=>x.id===id) || BELTS[0];
-    setCenter(b.center); setZoom(b.zoom);
-    setFocus({lat:b.center[0], lon:b.center[1], key:Date.now()});
-    load(id);
-  };
+  useEffect(load, []);
 
   const doSearch = () => {
     const q = search.trim().toLowerCase();
@@ -85,93 +49,31 @@ export default function RechargeMapPage() {
     api.rechargeCalculate(form).then(setCalc).catch((e) => setCalcErr(e.message));
   };
 
-  if (err) return <Err message={err} onRetry={()=>load()} />;
+  if (err) return <Err message={err} onRetry={load} />;
   if (!springs.length) return <Loading label="Loading map layers…" />;
 
   const set = (k: string, v: any) => setForm({ ...form, [k]: v });
 
-  const onSpringClick = (id:string) => {
-    api.springDetail(id).then(setSelected).catch(()=>{});
-  };
-
   return (
-    <div className="grid lg:grid-cols-[1fr_360px] gap-4">
+    <div className="grid lg:grid-cols-[1fr_320px] gap-4">
       <div className="space-y-3">
-        <div className="bg-white border border-slate-200 rounded-lg p-3 space-y-2">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-bold text-slate-600">Tribal Belt:</span>
-            <select value={belt} onChange={e=>onBeltChange(e.target.value)} className={inputCls + ' !w-auto !py-1'}>
-              {BELTS.map(b=> <option key={b.id} value={b.id}>{b.name} {b.id?`(${springs.filter(s=> s.state && b.name.toLowerCase().includes(s.state.toLowerCase().slice(0,4))).length || ''})`:''}</option>)}
-            </select>
-            <span className="text-xs text-slate-500">{springs.length} springs · {villages.length} villages · {grid.length} grid</span>
-            <span className="ml-auto text-[11px] text-slate-400">Coords shown on hover · Scale bottom-left</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            {LAYER_LABELS.map(([k, label]) => (
-              <label key={k} className="text-xs flex items-center gap-1.5 mr-2">
-                <input type="checkbox" checked={layers[k]} onChange={() => setLayers({ ...layers, [k]: !layers[k] })} />
-                {label}
-              </label>
-            ))}
-          </div>
-          <div className="flex gap-2">
-            <input value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && doSearch()}
-              placeholder="Search village / spring ID" className={inputCls + ' !w-52'} />
-            <button onClick={doSearch} className={btnGhost}>Search</button>
-            <button onClick={() => { const b = BELTS.find(x=>x.id===belt) || BELTS[0]; setFocus({ lat:b.center[0], lon:b.center[1], key:Date.now()}); }} className={btnGhost}>Reset to belt</button>
-          </div>
+        <div className="bg-white border border-slate-200 rounded-lg p-3 flex flex-wrap items-center gap-2">
+          {LAYER_LABELS.map(([k, label]) => (
+            <label key={k} className="text-xs flex items-center gap-1.5 mr-2">
+              <input type="checkbox" checked={layers[k]} onChange={() => setLayers({ ...layers, [k]: !layers[k] })} />
+              {label}
+            </label>
+          ))}
+          <span className="mx-1 h-4 w-px bg-slate-200" />
+          <input value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && doSearch()}
+            placeholder="Search village / spring ID" className={inputCls + ' !w-52'} />
+          <button onClick={doSearch} className={btnGhost}>Search</button>
+          <button onClick={() => setFocus({ lat: 23.46, lon: 84.96, key: Date.now() })} className={btnGhost}>Reset map</button>
         </div>
-        <div className="border border-slate-300 rounded-lg overflow-hidden relative" style={{ height: 560 }}>
+        <div className="border border-slate-300 rounded-lg overflow-hidden" style={{ height: 560 }}>
           <MapView springs={springs} villages={villages} wells={wells} grid={grid} interventions={[]}
-            layers={layers} focus={focus} center={center} zoom={zoom}
-            selected={selected} onSpringClick={onSpringClick}
-            springshed={selected?.estimated_springshed ? { lat: selected.estimated_springshed.center[0], lon: selected.estimated_springshed.center[1], radius: selected.estimated_springshed.radius_m } : null} />
-          {selected && (
-            <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur rounded-lg shadow-lg border border-slate-200 p-3 w-[340px] text-xs">
-              <div className="font-bold text-slate-800">{selected.spring_id} — {selected.nearby_village} ({selected.state})</div>
-              <div className="text-slate-600">{selected.latitude.toFixed(4)}, {selected.longitude.toFixed(4)} · {selected.elevation_m}m · {selected.seasonality}</div>
-              <div className="mt-1">Recharge <b>{selected.recharge_suitability}%</b> ({selected.suitability_class}) · Priority <b>{selected.priority?.priority_score}</b></div>
-              <div className="flex gap-2 mt-2">
-                <button onClick={()=>nav(`/springs?sel=${selected.spring_id}`)} className={btnGhost + ' !py-1 !text-xs'}>Open detail</button>
-                <button onClick={async()=>{
-                  try {
-                    const a = await api.analysis(selected.spring_id);
-                    setModal({
-                      open: true,
-                      title: `AI Hydrological Diagnosis — ${selected.spring_id}`,
-                      content: (
-                        <div className="space-y-3">
-                          <div className="grid grid-cols-2 gap-2 text-xs">
-                            <div className="bg-slate-50 p-2.5 rounded border border-slate-200">
-                              <span className="text-slate-500 block">Recharge Suitability:</span>
-                              <strong className="text-sm text-brand-800">{a.assessment.recharge_suitability}% ({a.assessment.recharge_class})</strong>
-                            </div>
-                            <div className="bg-slate-50 p-2.5 rounded border border-slate-200">
-                              <span className="text-slate-500 block">Water Stress:</span>
-                              <strong className="text-sm text-amber-700">{a.assessment.water_stress}</strong>
-                            </div>
-                          </div>
-                          <div className="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-xs">
-                            <strong className="text-emerald-900 block font-bold mb-1">Recommended Intervention:</strong>
-                            <div className="text-emerald-800 font-semibold">{a.recommendation.type}</div>
-                            <p className="text-emerald-700 mt-1">{a.recommendation.why}</p>
-                          </div>
-                          <div className="flex gap-2 justify-end pt-2">
-                            <button onClick={() => { setModal({ ...modal, open: false }); nav(`/springs?sel=${selected.spring_id}`); }} className={btnGhost + ' !py-1.5 text-xs'}>Open Detail Page</button>
-                            <button onClick={() => { setModal({ ...modal, open: false }); nav(`/planner?spring=${selected.spring_id}&type=${a.recommendation.type}`); }} className={btnPrimary + ' !py-1.5 text-xs'}>Simulate Intervention →</button>
-                          </div>
-                        </div>
-                      ),
-                    });
-                  } catch (e: any) {
-                    setModal({ open: true, title: 'AI Analysis Notice', content: <p className="text-red-700">{e.message}</p> });
-                  }
-                }} className={btnPrimary + ' !py-1 !text-xs'}>RUN AI ANALYSIS</button>
-              </div>
-            </div>
-          )}
+            layers={layers} focus={focus} onSpringClick={(id) => nav(`/springs?sel=${id}`)} />
         </div>
-        <div className="text-[11px] text-slate-500">Selected: {selected?.spring_id || 'none'} · Grid: {grid.length} points · State filter: {belt || 'All'} · Data source: Synthetic Prototype Dataset</div>
       </div>
       <div className="space-y-3">
         <Card title="Recharge calculator" sub="Prototype Decision-Support Estimate">
@@ -211,10 +113,6 @@ export default function RechargeMapPage() {
           </div>
         </Card>
       </div>
-
-      <Modal isOpen={modal.open} onClose={() => setModal({ ...modal, open: false })} title={modal.title}>
-        {modal.content}
-      </Modal>
     </div>
   );
 }

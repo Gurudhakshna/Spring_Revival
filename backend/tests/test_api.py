@@ -16,19 +16,19 @@ def test_health():
 def test_dashboard_dynamic():
     r = client.get("/api/dashboard")
     d = r.json()
-    assert d["total_springs"] == 126  # pan-India 7 belts x 18
-    assert d["villages_covered"] == 84  # 7 belts x 12
-    assert d["total_wells"] == 105  # 7 belts x 15
+    assert d["total_springs"] == 18
+    assert d["villages_covered"] == 12
+    assert d["total_wells"] == 15
     assert 0 < d["avg_recharge_suitability"] <= 100
     assert d["high_priority_zones"] >= 0
     assert d["potential_intervention_sites"] >= 0
 
 
 def test_geo_entities():
-    assert client.get("/api/villages").json()["count"] == 84
+    assert client.get("/api/villages").json()["count"] == 12
     sp = client.get("/api/springs").json()
-    assert sp["count"] == 126
-    assert client.get("/api/wells").json()["count"] == 105
+    assert sp["count"] == 18
+    assert client.get("/api/wells").json()["count"] == 15
     rain = client.get("/api/rainfall").json()
     assert len(rain["monthly"]) == 12 and len(rain["annual"]) == 10
     det = client.get("/api/springs/SPR-001").json()
@@ -60,7 +60,7 @@ def test_recharge_calculate():
 
 def test_recharge_map_and_detail():
     m = client.get("/api/recharge/map").json()
-    assert len(m["points"]) == 126 and len(m["grid"]) == 112  # pan-India 16x7
+    assert len(m["points"]) == 18 and len(m["grid"]) == 110
     d = client.get("/api/recharge/SPR-001").json()
     assert d["spring_id"] == "SPR-001" and "factors" in d
 
@@ -74,7 +74,7 @@ def test_ml_predict_and_metrics():
     assert 0 <= p["score"] <= 100 and p["class"] in ("HIGH", "MEDIUM", "LOW")
     assert 0.5 <= p["confidence"] <= 0.95
     m = client.get("/api/ml/metrics").json()
-    assert m["n_validation"] == 200  # pan-India expanded validation
+    assert m["n_validation"] == 120
     assert -1 <= m["r2"] <= 1 and m["mae"] >= 0 and m["rmse"] >= 0
     assert m["r2"] > 0.5, f"model underfit? r2={m['r2']}"
     fi = client.get("/api/ml/feature-importance").json()
@@ -98,14 +98,14 @@ def test_intervention_simulate_changes_with_params():
 
 def test_priorities_and_risks():
     pr = client.get("/api/priorities").json()
-    assert pr["count"] == 126
+    assert pr["count"] == 18
     scores = [p["priority_score"] for p in pr["priorities"]]
     assert scores == sorted(scores, reverse=True)
     assert "formula" in pr["priorities"][0] and "why" in pr["priorities"][0]
     rf = client.get("/api/risk-flags", params={"spring_id": "SPR-001"}).json()
     assert len(rf["flags"]) == 8
     allf = client.get("/api/risk-flags").json()
-    assert allf["count"] == 126
+    assert allf["count"] == 18
 
 
 def test_early_warning_status():

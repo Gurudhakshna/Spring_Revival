@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { api } from '../api/client';
-import { Badge, btnPrimary, Card, Err, Field, inputCls, Loading, Modal } from '../components/ui';
+import { btnPrimary, Card, Err, Field, inputCls, Loading } from '../components/ui';
 
 const PRETTY: Record<string, string> = {
   annual_rainfall_mm: 'Rainfall', geology: 'Geology', slope_deg: 'Slope',
@@ -12,31 +11,20 @@ const PRETTY: Record<string, string> = {
 };
 
 export default function AIAnalysisPage() {
-  const navigate = useNavigate();
   const [metrics, setMetrics] = useState<any>(null);
   const [imp, setImp] = useState<any[]>([]);
   const [err, setErr] = useState('');
   const [form, setForm] = useState({ elevation_m: 620, slope_deg: 12, annual_rainfall_mm: 1200, soil_moisture_index: 0.6, land_use: 'forest', geology: 'fractured_rock', distance_to_stream_m: 250, lineament_density_index: 0.6, groundwater_depth_m: 15 });
   const [pred, setPred] = useState<any>(null);
-  const [springs, setSprings] = useState<any[]>([]);
-  const [selSpring, setSelSpring] = useState('SPR-001');
-  const [analysis, setAnalysis] = useState<any>(null);
-  const [analysisBusy, setAnalysisBusy] = useState(false);
-  const [modal, setModal] = useState<{ open: boolean; title: string; content: React.ReactNode }>({ open: false, title: '', content: null });
-
 
   const load = () => {
     setErr('');
-    Promise.all([api.mlMetrics(), api.mlImportance(), api.springs()])
-      .then(([m, f, s]) => { setMetrics(m); setImp(f.features || []); setSprings(s.springs); if(s.springs.length) setSelSpring(s.springs[0].spring_id); })
+    Promise.all([api.mlMetrics(), api.mlImportance()])
+      .then(([m, f]) => { setMetrics(m); setImp(f.features || []); })
       .catch((e) => setErr(e.message));
   };
   useEffect(load, []);
   const set = (k: string, v: any) => setForm({ ...form, [k]: v });
-  const runUnified = async () => {
-    setAnalysisBusy(true); setErr('');
-    try{ const a = await api.analysis(selSpring); setAnalysis(a); } catch(e:any){ setErr(e.message); } finally{ setAnalysisBusy(false); }
-  };
 
   if (err) return <Err message={err} onRetry={load} />;
   if (!metrics) return <Loading label="Evaluating model on validation data…" />;
@@ -46,150 +34,15 @@ export default function AIAnalysisPage() {
 
   return (
     <div className="space-y-4">
-      {/* Unified Judge Flow - ONE button */}
-      <Card title="Unified AI Analysis — Judge Flow" sub="Select spring → RUN AI ANALYSIS → See Why → Recommendation (ONE backend call: GET /api/analysis/{spring_id})">
-        <div className="flex flex-wrap gap-2 items-end">
-          <div className="flex-1 min-w-[200px]"><label className="text-xs font-semibold">Spring</label>
-            <select value={selSpring} onChange={e=>setSelSpring(e.target.value)} className={inputCls}>
-              {springs.slice(0,60).map(s=> <option key={s.spring_id} value={s.spring_id}>{s.spring_id} — {s.state} — {s.recharge_suitability}%</option>)}
-            </select>
-          </div>
-          <button onClick={runUnified} disabled={analysisBusy} className={btnPrimary + ' !py-2'}>
-            {analysisBusy ? 'Analyzing…' : 'RUN AI ANALYSIS'}
-          </button>
-          {analysis && <span className="text-xs text-slate-500">Timestamp {analysis.timestamp} · Source {analysis.data_source}</span>}
-        </div>
-        {analysis && (
-          <div className="mt-4 space-y-3">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {[
-                ['Recharge', `${analysis.recharge.score}% ${analysis.recharge.class}`],
-                ['Water Stress', analysis.assessment.water_stress],
-                ['Spring Risk', analysis.assessment.spring_risk],
-                ['Confidence', String(analysis.assessment.confidence)],
-              ].map(([l,v])=>(
-                <div key={l} className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">
-                  <div className="text-[11px] font-semibold uppercase text-slate-500">{l}</div>
-                  <div className="text-lg font-bold text-brand-800">{String(v)}</div>
-                </div>
-              ))}
-            </div>
-            <div className="grid md:grid-cols-2 gap-3">
-              <div className="bg-white border rounded p-3">
-                <div className="text-xs font-bold">Why? — Contributing factors (real from recharge engine)</div>
-                <div className="space-y-1.5 mt-2">
-                  {analysis.why.slice(0,6).map((w:any)=> (
-                    <div key={w.factor} className="flex items-center gap-2 text-xs">
-                      <span className="w-36 text-slate-600">{w.factor}</span>
-                      <div className="flex-1 h-2.5 bg-slate-100 rounded"><div className="h-2.5 rounded bg-brand-600" style={{width:`${Math.min(100,(w.value/20)*100)}%`}}/></div>
-                      <span className="w-10 text-right font-semibold">{w.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-amber-50 border border-amber-200 rounded p-3 text-sm">
-                <div className="font-bold">Recommended Intervention</div>
-                <div className="mt-1"><b>{analysis.recommendation.type}</b> — {analysis.recommendation.why}</div>
-                <div className="text-xs text-slate-600 mt-1">Village: {analysis.location.village} · Elevation {analysis.location.elevation_m}m</div>
-                <div className="text-[11px] text-slate-500 mt-2">Model: {analysis.model.name} ({analysis.model.n_estimators} trees) · Train {analysis.model.n_train} · Val {analysis.model.n_val}</div>
-                <div className="text-[11px] text-slate-500">Limitations: Heuristic lift, not measured outcome. Springshed is visual estimate.</div>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={() => navigate(`/planner?spring=${analysis.spring_id}&type=${analysis.recommendation.type}`)}
-                className="text-sm bg-emerald-700 hover:bg-emerald-800 text-white font-medium rounded px-4 py-2 transition-colors"
-              >
-                Simulate → What-If
-              </button>
-              <button
-                onClick={async () => {
-                  try {
-                    const r = await fetch(`/api/reports/${analysis.spring_id}`);
-                    if (r.headers.get('content-type')?.includes('pdf')) {
-                      const b = await r.blob();
-                      const u = URL.createObjectURL(b);
-                      const a = document.createElement('a');
-                      a.href = u;
-                      a.download = `JAL-RAKSHA-${analysis.spring_id}.pdf`;
-                      a.click();
-                    } else {
-                      const j = await r.json();
-                      setModal({
-                        open: true,
-                        title: `Report Generation — ${analysis.spring_id}`,
-                        content: <div className="text-xs font-mono bg-slate-50 p-3 rounded">{JSON.stringify(j, null, 2)}</div>,
-                      });
-                    }
-                  } catch (e: any) {
-                    setModal({ open: true, title: 'Report Download Error', content: <p className="text-red-700">{e.message}</p> });
-                  }
-                }}
-                className="text-sm border border-slate-300 hover:bg-slate-50 font-medium rounded px-4 py-2 transition-colors"
-              >
-                Generate Report (PDF)
-              </button>
-              <button
-                onClick={async () => {
-                  try {
-                    const r = await fetch(`/api/analysis/${analysis.spring_id}/explain`, { method: 'POST' });
-                    const j = await r.json();
-                    setModal({
-                      open: true,
-                      title: `AI Hydrological Reasoning — ${analysis.spring_id}`,
-                      content: (
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs bg-brand-50 text-brand-800 border border-brand-200 px-2 py-0.5 rounded font-semibold">
-                              Engine: {j.provider || 'Rule-Engine + LLM'}
-                            </span>
-                            <span className="text-xs text-slate-500">Live Decision Trace</span>
-                          </div>
-                          <div className="text-sm text-slate-800 leading-relaxed whitespace-pre-wrap bg-slate-50 p-3 rounded-lg border border-slate-200">
-                            {j.explanation}
-                          </div>
-                          <p className="text-xs text-slate-500 italic">
-                            {j.disclaimer || 'Prototype Decision-Support Estimate — requires field validation.'}
-                          </p>
-                        </div>
-                      ),
-                    });
-                  } catch (e: any) {
-                    setModal({ open: true, title: 'AI Explanation Error', content: <p className="text-red-700">{e.message}</p> });
-                  }
-                }}
-                className="text-sm border border-slate-300 hover:bg-slate-50 font-medium rounded px-4 py-2 transition-colors"
-              >
-                Explain (AI)
-              </button>
-            </div>
-          </div>
-        )}
-      </Card>
-
-      <div className="bg-sky-50/70 border border-sky-200 rounded-xl p-4 text-xs text-sky-950 space-y-1.5">
-        <div className="font-bold flex items-center gap-2 text-sky-900">
-          <Badge tone="info">Scientific Transparency Notice</Badge>
-          <span>Model Training &amp; Validation Methodology</span>
-        </div>
-        <p className="text-slate-700 leading-relaxed">
-          RandomForestRegressor (200 estimators) trained on synthetic pan-India prototype records ({metrics.n_train} training, {metrics.n_validation} validation samples). 
-          High R² scores demonstrate that the ensemble model faithfully learns non-linear physical recharge formulas across 9 geo-environmental features. 
-          Confidence estimates ({analysis?.assessment?.confidence || '0.82'}) reflect ensemble tree prediction consensus (low std across trees = high certainty). 
-          For operational state-level deployment, the architecture is ready to retrain directly on CGWB and state hydrological borewell datasets.
-        </p>
-      </div>
-
       <div className="grid md:grid-cols-4 gap-3">
-        {[['Model', 'Random Forest (200 trees)'], ['R² (validation fit)', metrics.r2 ?? '—'], ['MAE', metrics.mae ?? '—'], ['RMSE', metrics.rmse ?? '—']].map(([l, v]) => (
+        {[['Model', 'Random Forest'], ['R² (validation)', metrics.r2 ?? '—'], ['MAE', metrics.mae ?? '—'], ['RMSE', metrics.rmse ?? '—']].map(([l, v]) => (
           <div key={l} className="bg-white border border-slate-200 rounded-lg px-4 py-3">
             <div className="text-[11px] font-semibold uppercase text-slate-500">{l}</div>
             <div className="text-2xl font-bold text-brand-800">{String(v)}</div>
           </div>
         ))}
       </div>
-      <p className="text-xs text-slate-500">Validation metrics computed live from validation_data.csv (n={metrics.n_validation}) — {metrics.computed_from || 'real calculation'}. Target: recharge suitability score (0–100).</p>
-
+      <p className="text-xs text-slate-500">Metrics computed live from validation_data.csv (n={metrics.n_validation}, train n={metrics.n_train}) — {metrics.computed_from}. Prediction target: recharge suitability (0–100).</p>
 
       <div className="grid md:grid-cols-2 gap-4">
         <Card title="Feature importance (dynamic from model)" sub="Random Forest · aggregated one-hot importances">
@@ -241,10 +94,6 @@ export default function AIAnalysisPage() {
           {pred && <div className="text-sm">Score <b className="text-lg">{pred.score}</b> ({pred.class}) · confidence {pred.confidence} · top feature: {pred.top_feature?.feature}</div>}
         </div>
       </Card>
-
-      <Modal isOpen={modal.open} onClose={() => setModal({ ...modal, open: false })} title={modal.title}>
-        {modal.content}
-      </Modal>
     </div>
   );
 }

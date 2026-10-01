@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import 'leaflet/dist/leaflet.css';
 import App from './App';
-import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import RechargeMapPage from './pages/RechargeMapPage';
 import SpringsPage from './pages/SpringsPage';
@@ -12,8 +10,6 @@ import EarlyWarningPage from './pages/EarlyWarningPage';
 import ReportsPage from './pages/ReportsPage';
 import AIAnalysisPage from './pages/AIAnalysisPage';
 import DataPage from './pages/DataPage';
-import FieldPage from './pages/FieldPage';
-import CropAdvisorPage from './pages/CropAdvisorPage';
 import AboutPage from './pages/AboutPage';
 import './index.css';
 
@@ -22,16 +18,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route element={<App />}>
-          <Route index element={<LandingPage />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route index element={<Dashboard />} />
           <Route path="map" element={<RechargeMapPage />} />
           <Route path="springs" element={<SpringsPage />} />
           <Route path="early-warning" element={<EarlyWarningPage />} />
           <Route path="reports" element={<ReportsPage />} />
           <Route path="planner" element={<PlannerPage />} />
           <Route path="ai" element={<AIAnalysisPage />} />
-          <Route path="field" element={<FieldPage />} />
-          <Route path="crop" element={<CropAdvisorPage />} />
           <Route path="data" element={<DataPage />} />
           <Route path="about" element={<AboutPage />} />
         </Route>
