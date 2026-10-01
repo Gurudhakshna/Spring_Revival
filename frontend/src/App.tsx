@@ -6,7 +6,7 @@ import { Badge, DemoBadge } from './components/ui';
 const NAV = [
   ['/', 'Dashboard'], ['/map', 'Recharge Map'], ['/springs', 'Springs'],
   ['/early-warning', 'Early Warning'], ['/reports', 'Reports'],
-  ['/planner', 'Intervention Planner'], ['/ai', 'AI Analysis'], ['/data', 'Data'], ['/about', 'About'],
+  ['/planner', 'Intervention Planner'], ['/ai', 'AI Analysis'], ['/crop', 'Crop Advisor'], ['/data', 'Data'], ['/about', 'About'],
 ];
 
 export default function App() {
