@@ -19,41 +19,20 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
 export const api = {
   health: () => req<any>('/api/health'),
   dashboard: () => req<Dashboard>('/api/dashboard'),
-  villages: (q?: { search?: string; state?: string; belt_id?: string }) => {
-    const p = new URLSearchParams();
-    if (q?.search) p.set('search', q.search);
-    if (q?.state) p.set('state', q.state);
-    if (q?.belt_id) p.set('belt_id', q.belt_id);
-    const s = p.toString();
-    return req<{ count: number; villages: Village[] }>(`/api/villages${s ? `?${s}` : ''}`);
-  },
-  springs: (q?: { search?: string; suitability_class?: string; seasonality?: string; state?: string; belt_id?: string; tribal_belt?: string }) => {
+  villages: (search?: string) =>
+    req<{ count: number; villages: Village[] }>(`/api/villages${search ? `?search=${encodeURIComponent(search)}` : ''}`),
+  springs: (q?: { search?: string; suitability_class?: string; seasonality?: string }) => {
     const p = new URLSearchParams();
     if (q?.search) p.set('search', q.search);
     if (q?.suitability_class) p.set('suitability_class', q.suitability_class);
     if (q?.seasonality) p.set('seasonality', q.seasonality);
-    if (q?.state) p.set('state', q.state);
-    if (q?.belt_id) p.set('belt_id', q.belt_id);
-    if (q?.tribal_belt) p.set('tribal_belt', q.tribal_belt);
     const s = p.toString();
     return req<{ count: number; springs: Spring[] }>(`/api/springs${s ? `?${s}` : ''}`);
   },
   springDetail: (id: string) => req<Spring>(`/api/springs/${encodeURIComponent(id)}`),
-  wells: (q?: { state?: string; belt_id?: string }) => {
-    const p = new URLSearchParams();
-    if (q?.state) p.set('state', q.state);
-    if (q?.belt_id) p.set('belt_id', q.belt_id);
-    const s = p.toString();
-    return req<{ count: number; wells: Well[] }>(`/api/wells${s ? `?${s}` : ''}`);
-  },
+  wells: () => req<{ count: number; wells: Well[] }>('/api/wells'),
   rainfall: () => req<{ monthly: any[]; annual: any[] }>('/api/rainfall'),
-  rechargeMap: (q?: { belt_id?: string; state?: string }) => {
-    const p = new URLSearchParams();
-    if (q?.belt_id) p.set('belt_id', q.belt_id);
-    if (q?.state) p.set('state', q.state);
-    const s = p.toString();
-    return req<{ points: any[]; grid: GridPoint[]; weights: any }>(`/api/recharge/map${s ? `?${s}` : ''}`);
-  },
+  rechargeMap: () => req<{ points: any[]; grid: GridPoint[]; weights: any }>(`/api/recharge/map`),
   rechargeFor: (id: string) => req<any>(`/api/recharge/${encodeURIComponent(id)}`),
   rechargeCalculate: (body: any) =>
     req<any>('/api/recharge/calculate', { method: 'POST', body: JSON.stringify(body) }),
@@ -63,52 +42,11 @@ export const api = {
   interventions: () => req<{ count: number; interventions: any[] }>('/api/interventions'),
   simulate: (body: any) =>
     req<any>('/api/interventions/simulate', { method: 'POST', body: JSON.stringify(body) }),
-  priorities: (q?: { state?: string; belt_id?: string }) => {
-    const p = new URLSearchParams();
-    if (q?.state) p.set('state', q.state);
-    if (q?.belt_id) p.set('belt_id', q.belt_id);
-    const s = p.toString();
-    return req<{ count: number; priorities: any[] }>(`/api/priorities${s ? `?${s}` : ''}`);
-  },
+  priorities: () => req<{ count: number; priorities: any[] }>('/api/priorities'),
   riskFlags: (spring_id?: string) =>
     req<any>(`/api/risk-flags${spring_id ? `?spring_id=${encodeURIComponent(spring_id)}` : ''}`),
   trainingData: (limit = 100) => req<any>(`/api/training-data?limit=${limit}`),
   studyAreas: () => req<{ areas: any[] }>('/api/study-areas'),
-  // Unified AI Analysis - ONE call for recharge+risk+priority+why
-  analysis: (spring_id: string) => req<any>(`/api/analysis/${encodeURIComponent(spring_id)}`),
-  // Field observations
-  fieldObservations: () => req<any>('/api/field-observations'),
-  fieldObservationCreate: (body: any) => req<any>('/api/field-observations', { method: 'POST', body: JSON.stringify(body) }),
-  // Reports
-  reportGenerate: (spring_id: string) => req<any>(`/api/reports/${encodeURIComponent(spring_id)}`),
-  // Data upload (admin)
-  dataUpload: (body: FormData) => fetch('/api/data/upload', { method: 'POST', body }).then(r => r.json()),
-  dataHistory: () => req<any>('/api/data/history'),
-  // Real IMD + Soil (Spring_Revival Db)
-  realSummary: () => req<any>('/api/real/summary'),
-  rainfallNormal: (q?: {state?:string; district?:string; q?:string; limit?:number}) => {
-    const p=new URLSearchParams(); if(q?.state) p.set('state',q.state); if(q?.district) p.set('district',q.district); if(q?.q) p.set('q',q.q); if(q?.limit) p.set('limit',String(q.limit));
-    const s=p.toString(); return req<any>(`/api/rainfall/normal${s?`?${s}`:''}`);
-  },
-  rainfallHistorical: (q?: {subdivision?:string; from_year?:number; to_year?:number; limit?:number}) => {
-    const p=new URLSearchParams(); if(q?.subdivision) p.set('subdivision',q.subdivision); if(q?.from_year) p.set('from_year',String(q.from_year)); if(q?.to_year) p.set('to_year',String(q.to_year)); if(q?.limit) p.set('limit',String(q.limit));
-    const s=p.toString(); return req<any>(`/api/rainfall/historical${s?`?${s}`:''}`);
-  },
-  rainfallDaily: (q?: {state?:string; district?:string; month?:number; limit?:number}) => {
-    const p=new URLSearchParams(); if(q?.state) p.set('state',q.state); if(q?.district) p.set('district',q.district); if(q?.month) p.set('month',String(q.month)); if(q?.limit) p.set('limit',String(q.limit));
-    const s=p.toString(); return req<any>(`/api/rainfall/daily${s?`?${s}`:''}`);
-  },
-  soil: (q?: {district?:string; q?:string; limit?:number}) => {
-    const p=new URLSearchParams(); if(q?.district) p.set('district',q.district); if(q?.q) p.set('q',q.q); if(q?.limit) p.set('limit',String(q.limit));
-    const s=p.toString(); return req<any>(`/api/soil${s?`?${s}`:''}`);
-  },
-  tribalBeltRainfall: () => req<any>('/api/tribal-belt/rainfall'),
-  cropAdvisor: (q?: {spring_id?:string; district?:string; recharge?:number; rainfall?:number; soil_moisture?:number; early_risk?:string}) => {
-    const p=new URLSearchParams(); if(q?.spring_id) p.set('spring_id',q.spring_id); if(q?.district) p.set('district',q.district); if(q?.recharge!==undefined) p.set('recharge',String(q.recharge)); if(q?.rainfall!==undefined) p.set('rainfall',String(q.rainfall)); if(q?.soil_moisture!==undefined) p.set('soil_moisture',String(q.soil_moisture)); if(q?.early_risk) p.set('early_risk',q.early_risk);
-    const s=p.toString(); return req<any>(`/api/crop-advisor${s?`?${s}`:''}`);
-  },
-  cropAdvisorPost: (body:any) => req<any>('/api/crop-advisor',{method:'POST', body:JSON.stringify(body)}),
-  cropAdvisorExplain: (body:any) => req<any>('/api/crop-advisor/explain',{method:'POST', body:JSON.stringify(body)}),
   // ---- Feature 1: groundwater early warning (real dataset, AI/Prototype Decision Support)
   ewStatus: () => req<any>('/api/early-warning/status'),
   ewSummary: (limit = 100) => req<any>(`/api/early-warning/summary?limit=${limit}`),
@@ -143,6 +81,67 @@ export const api = {
   reportClusters: () => req<any>('/api/community-reports/clusters'),
   reportChat: (session: any, message: string) =>
     req<any>('/api/community-reports/chat', { method: 'POST', body: JSON.stringify({ session, message }) }),
+  // ---- Field observations (Field Worker Mode)
+  fieldObservations: () => req<any>('/api/field-observations'),
+  fieldObservationCreate: (body: any) =>
+    req<any>('/api/field-observations', { method: 'POST', body: JSON.stringify(body) }),
+  // ---- Real IMD + Soil (Spring_Revival Db)
+  realSummary: () => req<any>('/api/real/summary'),
+  rainfallNormal: (q?: { state?: string; district?: string; q?: string; limit?: number }) => {
+    const p = new URLSearchParams();
+    if (q?.state) p.set('state', q.state);
+    if (q?.district) p.set('district', q.district);
+    if (q?.q) p.set('q', q.q);
+    if (q?.limit) p.set('limit', String(q.limit));
+    const s = p.toString();
+    return req<any>(`/api/rainfall/normal${s ? `?${s}` : ''}`);
+  },
+  rainfallHistorical: (q?: { subdivision?: string; from_year?: number; to_year?: number; limit?: number }) => {
+    const p = new URLSearchParams();
+    if (q?.subdivision) p.set('subdivision', q.subdivision);
+    if (q?.from_year) p.set('from_year', String(q.from_year));
+    if (q?.to_year) p.set('to_year', String(q.to_year));
+    if (q?.limit) p.set('limit', String(q.limit));
+    const s = p.toString();
+    return req<any>(`/api/rainfall/historical${s ? `?${s}` : ''}`);
+  },
+  rainfallDaily: (q?: { state?: string; district?: string; month?: number; limit?: number }) => {
+    const p = new URLSearchParams();
+    if (q?.state) p.set('state', q.state);
+    if (q?.district) p.set('district', q.district);
+    if (q?.month) p.set('month', String(q.month));
+    if (q?.limit) p.set('limit', String(q.limit));
+    const s = p.toString();
+    return req<any>(`/api/rainfall/daily${s ? `?${s}` : ''}`);
+  },
+  soil: (q?: { district?: string; q?: string; limit?: number }) => {
+    const p = new URLSearchParams();
+    if (q?.district) p.set('district', q.district);
+    if (q?.q) p.set('q', q.q);
+    if (q?.limit) p.set('limit', String(q.limit));
+    const s = p.toString();
+    return req<any>(`/api/soil${s ? `?${s}` : ''}`);
+  },
+  tribalBeltRainfall: () => req<any>('/api/tribal-belt/rainfall'),
+  // ---- Smart Crop Advisor
+  cropAdvisor: (q?: { spring_id?: string; district?: string; recharge?: number; rainfall?: number; soil_moisture?: number; early_risk?: string }) => {
+    const p = new URLSearchParams();
+    if (q?.spring_id) p.set('spring_id', q.spring_id);
+    if (q?.district) p.set('district', q.district);
+    if (q?.recharge !== undefined) p.set('recharge', String(q.recharge));
+    if (q?.rainfall !== undefined) p.set('rainfall', String(q.rainfall));
+    if (q?.soil_moisture !== undefined) p.set('soil_moisture', String(q.soil_moisture));
+    if (q?.early_risk) p.set('early_risk', q.early_risk);
+    const s = p.toString();
+    return req<any>(`/api/crop-advisor${s ? `?${s}` : ''}`);
+  },
+  cropAdvisorPost: (body: any) => req<any>('/api/crop-advisor', { method: 'POST', body: JSON.stringify(body) }),
+  cropAdvisorExplain: (body: any) => req<any>('/api/crop-advisor/explain', { method: 'POST', body: JSON.stringify(body) }),
+  // ---- Reports
+  reportGenerate: (spring_id: string) => req<any>(`/api/reports/${encodeURIComponent(spring_id)}`),
+  // ---- Data upload (admin)
+  dataUpload: (body: FormData) => fetch('/api/data/upload', { method: 'POST', body }).then(r => r.json()),
+  dataHistory: () => req<any>('/api/data/history'),
 };
 
 export const inr = (n: number) => '₹' + Number(n || 0).toLocaleString('en-IN');

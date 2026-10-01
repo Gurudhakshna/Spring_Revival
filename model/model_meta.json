@@ -14,5 +14,6 @@
     "geology"
   ],
   "n_train": 800,
-  "disclaimer": "Prototype Decision-Support Estimate"
-}
+  "data_source": "Synthetic prototype dataset (gen_data_panindia.py, seed=42) - R²/MAE reflect model fit to prototype formula. CGWB/field retraining required for production.",
+  "disclaimer": "Prototype Decision-Support Estimate — requires field validation."
+}

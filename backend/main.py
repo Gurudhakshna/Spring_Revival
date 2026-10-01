@@ -3,6 +3,7 @@
 Run:  uvicorn main:app --reload --port 8000   (from backend/)
 """
 from __future__ import annotations
+import logging
 import os
 # Load .env before anything else (API keys, CORS)
 try:
@@ -10,6 +11,12 @@ try:
     load_dotenv()
 except Exception:
     pass
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+)
+logger = logging.getLogger("jal-raksha")
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -33,12 +40,19 @@ async def lifespan(app: FastAPI):
         provider.get_springs(); provider.get_villages()
         provider.get_wells(); provider.get_intervention_costs()
     except Exception as e:
-        print(f"[warn] dataset preload issue: {e}")
+        logger.warning("dataset preload issue: %s", e)
     try:
         ml_model.get_bundle()
-        print("[ok] ML model ready")
+        logger.info("ML model ready")
     except Exception as e:
-        print(f"[warn] ML model unavailable at startup: {e}")
+        logger.warning("ML model unavailable at startup: %s", e)
+    # Pre-warm early warning cache to avoid 5-10s delay on first request.
+    try:
+        from services import early_warning as ew_svc
+        ew_svc.all_warnings(min_level="WATCH", limit=200)
+        logger.info("Early-warning cache warmed")
+    except Exception as e:
+        logger.warning("Early-warning cache warm skipped: %s", e)
     yield
 
 app = FastAPI(title="JAL-RAKSHA AI",
@@ -54,6 +68,7 @@ app.add_middleware(
 provider = DemoDataProvider(DATA_DIR)
 routes.provider = provider
 routes.ml = ml_model
+routes.ADMIN_KEY = os.getenv("ADMIN_KEY") or None
 app.include_router(routes.router)
 
 

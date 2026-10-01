@@ -179,5 +179,7 @@ def metrics() -> Dict:
         "n_validation": int(len(df)),
         "n_train": int(pd.read_csv(p['train']).shape[0]) if os.path.exists(p["train"]) else 0,
         "target": TARGET,
-        "computed_from": "validation_data.csv (real calculation, not a placeholder)",
+        "computed_from": "validation_data.csv (computed on validation split)",
+        "data_source": "Synthetic prototype dataset (gen_data_panindia.py, seed=42) — R²/MAE reflect model fit to prototype formula, not real-world field survey accuracy",
+        "disclaimer": "Prototype Decision-Support Estimate — Retrain on CGWB/field data for deployment",
     }

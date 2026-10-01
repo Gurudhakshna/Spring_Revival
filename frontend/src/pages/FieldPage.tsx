@@ -30,7 +30,7 @@ export default function FieldPage(){
   };
   return (
     <div className="space-y-4">
-      <Card title="Field Worker Mode" sub="Record discharge, water quality, GPS, notes — stored in backend/data/field_observations.json (offline queue TODO)">
+      <Card title="Field Worker Mode" sub="Record discharge, water quality, GPS, notes — field observations synced to server">
         <div className="grid md:grid-cols-2 gap-3">
           <Field label="Spring *"><select value={form.spring_id} onChange={e=>setForm({...form,spring_id:e.target.value})} className={inputCls}>{springs.slice(0,60).map(s=> <option key={s.spring_id} value={s.spring_id}>{s.spring_id} — {s.state}</option>)}</select></Field>
           <Field label="Observer"><input value={form.observer_name} onChange={e=>setForm({...form,observer_name:e.target.value})} placeholder="Field Officer name" className={inputCls}/></Field>

@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import 'leaflet/dist/leaflet.css';
 import App from './App';
+import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import RechargeMapPage from './pages/RechargeMapPage';
 import SpringsPage from './pages/SpringsPage';
@@ -20,7 +22,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route element={<App />}>
-          <Route index element={<Dashboard />} />
+          <Route index element={<LandingPage />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="map" element={<RechargeMapPage />} />
           <Route path="springs" element={<SpringsPage />} />
           <Route path="early-warning" element={<EarlyWarningPage />} />

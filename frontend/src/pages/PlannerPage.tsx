@@ -36,7 +36,15 @@ export default function PlannerPage() {
     api.simulate({ intervention_type: t, spring_id: sid, quantity: q })
       .then((r)=>{ setResult(r); api.analysis(sid).then(setAnalysis).catch(()=>{}); showToast(`✓ Simulated: ${r.base_score} → ${r.predicted_score} (+${r.improvement} pts) for ${sid}`); }).catch((e) => setErr(e.message)).finally(() => setBusy(false));
   };
-  useEffect(() => { if (catalog.length) simulate(); }, [type, qty, springId]); // eslint-disable-line
+
+  useEffect(() => {
+    if (!catalog.length) return;
+    const timer = setTimeout(() => {
+      simulate(type, qty, springId);
+    }, 450);
+    return () => clearTimeout(timer);
+  }, [type, qty, springId, catalog.length]); // Debounced to prevent API hammering
+
 
   const meta = catalog.find((c) => c.type === type);
   if (err && !catalog.length) return <Err message={err} onRetry={() => window.location.reload()} />;

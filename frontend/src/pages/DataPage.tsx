@@ -78,15 +78,29 @@ export default function DataPage() {
 
   return (
     <div className="space-y-3">
-      <Card title="Data Management — Upload & Validate" sub="Admin: Upload CSV (springs/villages/wells) → Validate header contract → Preview → Import history">
-        <div className="flex flex-wrap gap-2 items-end">
-          <div><label className="text-xs font-semibold">Type</label><select value={uploadType} onChange={e=>setUploadType(e.target.value)} className={inputCls}><option>springs</option><option>villages</option><option>wells</option></select></div>
-          <div><label className="text-xs font-semibold">CSV File</label><input type="file" accept=".csv" onChange={e=>setUploadFile(e.target.files?.[0]||null)} className={inputCls}/></div>
-          <button onClick={doUpload} className="text-sm bg-brand-700 text-white rounded px-4 py-2">Validate & Preview</button>
-          <button onClick={async()=>{ const r=await api.dataHistory(); setUploadRes({history:r.history}); }} className="text-sm border rounded px-3 py-2">History</button>
+      <Card
+        title="Data Management — Schema Validation & Audit"
+        sub="Validation Mode: Upload CSV to verify required columns, data types, and GPS coordinates. (In demo environment, active dataset overwrite requires administrator approval)."
+      >
+        <div className="bg-amber-50 border border-amber-200 rounded p-2.5 mb-3 text-xs text-amber-900">
+          <strong>Demo Safety Guard:</strong> Uploaded CSV files are strictly validated against schema contracts and recorded in the audit history. Real-time file replacement is disabled in demo mode to protect presentation state.
         </div>
-        {uploadRes && <pre className="mt-3 text-xs bg-slate-50 border rounded p-3 overflow-auto max-h-48">{JSON.stringify(uploadRes,null,2)}</pre>}
-        <div className="text-[11px] text-slate-500 mt-2">Required springs: spring_id,latitude,longitude,recharge_suitability · villages: village_id,name,latitude,longitude · wells: well_id,latitude,longitude,depth_m · Errors shown before import.</div>
+        <div className="flex flex-wrap gap-2 items-end">
+          <div><label className="text-xs font-semibold">Entity Type</label><select value={uploadType} onChange={e=>setUploadType(e.target.value)} className={inputCls}><option>springs</option><option>villages</option><option>wells</option></select></div>
+          <div><label className="text-xs font-semibold">CSV File</label><input type="file" accept=".csv" onChange={e=>setUploadFile(e.target.files?.[0]||null)} className={inputCls}/></div>
+          <button onClick={doUpload} className="text-sm bg-brand-700 hover:bg-brand-800 text-white rounded px-4 py-2 font-medium">Validate &amp; Preview</button>
+          <button onClick={async()=>{ const r=await api.dataHistory(); setUploadRes({history:r.history}); }} className="text-sm border rounded px-3 py-2 hover:bg-slate-50">Audit History</button>
+        </div>
+        {uploadRes && (
+          <div className="mt-3 p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs space-y-1">
+            <div className="font-bold text-slate-800">
+              {uploadRes.valid ? '✓ Validation Successful' : 'Validation Notice'}
+            </div>
+            {uploadRes.message && <div className="text-slate-600">{uploadRes.message}</div>}
+            <pre className="text-[11px] bg-white border border-slate-200 rounded p-2 overflow-auto max-h-40">{JSON.stringify(uploadRes,null,2)}</pre>
+          </div>
+        )}
+        <div className="text-[11px] text-slate-500 mt-2">Required columns — springs: spring_id, latitude, longitude, recharge_suitability · villages: village_id, name, latitude, longitude · wells: well_id, latitude, longitude, depth_m.</div>
       </Card>
 
       <div className="flex flex-wrap gap-1 items-center">

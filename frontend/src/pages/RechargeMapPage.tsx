@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../api/client';
 import MapView, { ALL_LAYERS, Focus, MapLayers } from '../components/MapView';
-import { btnGhost, btnPrimary, Card, Err, Field, inputCls, Loading } from '../components/ui';
+import { btnGhost, btnPrimary, Card, Err, Field, inputCls, Loading, Modal } from '../components/ui';
+import { useStudyArea } from '../App';
 
 const LAYER_LABELS: [keyof MapLayers, string][] = [
   ['villages', 'Villages'], ['springs', 'Springs'], ['wells', 'Wells'],
@@ -25,6 +26,7 @@ const BELTS = [
 
 export default function RechargeMapPage() {
   const nav = useNavigate();
+  const { area } = useStudyArea();
   const [springs, setSprings] = useState<any[]>([]);
   const [villages, setVillages] = useState<any[]>([]);
   const [wells, setWells] = useState<any[]>([]);
@@ -37,7 +39,9 @@ export default function RechargeMapPage() {
   const [zoom, setZoom] = useState(BELTS.find(b=>b.id===belt)?.zoom || 6);
   const [selected, setSelected] = useState<any>(null);
   const [err, setErr] = useState('');
+  const [modal, setModal] = useState<{ open: boolean; title: string; content: React.ReactNode }>({ open: false, title: '', content: null });
   const [form, setForm] = useState({ rainfall: 1200, slope: 12, soil_moisture: 0.7, land_use: 'forest', geology: 'fractured_rock', distance_to_stream: 250, lineament_density: 0.8, groundwater_depth: 15 });
+
   const [calc, setCalc] = useState<any>(null);
   const [calcErr, setCalcErr] = useState('');
 
@@ -50,6 +54,13 @@ export default function RechargeMapPage() {
   };
   useEffect(()=>{ load(); }, []);
   useEffect(()=>{ localStorage.setItem('jr-belt', belt); }, [belt]);
+  useEffect(() => {
+    if (area && area !== 'all' && area !== belt) {
+      onBeltChange(area);
+    } else if (area === 'all' && belt) {
+      onBeltChange('');
+    }
+  }, [area]);
 
   const onBeltChange = (id: string) => {
     setBelt(id);
@@ -116,15 +127,45 @@ export default function RechargeMapPage() {
             selected={selected} onSpringClick={onSpringClick}
             springshed={selected?.estimated_springshed ? { lat: selected.estimated_springshed.center[0], lon: selected.estimated_springshed.center[1], radius: selected.estimated_springshed.radius_m } : null} />
           {selected && (
-            <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur rounded-lg shadow-lg border border-slate-200 p-3 w-[320px] text-xs">
-              <div className="font-bold">{selected.spring_id} — {selected.nearby_village} ({selected.state})</div>
+            <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur rounded-lg shadow-lg border border-slate-200 p-3 w-[340px] text-xs">
+              <div className="font-bold text-slate-800">{selected.spring_id} — {selected.nearby_village} ({selected.state})</div>
               <div className="text-slate-600">{selected.latitude.toFixed(4)}, {selected.longitude.toFixed(4)} · {selected.elevation_m}m · {selected.seasonality}</div>
               <div className="mt-1">Recharge <b>{selected.recharge_suitability}%</b> ({selected.suitability_class}) · Priority <b>{selected.priority?.priority_score}</b></div>
               <div className="flex gap-2 mt-2">
                 <button onClick={()=>nav(`/springs?sel=${selected.spring_id}`)} className={btnGhost + ' !py-1 !text-xs'}>Open detail</button>
                 <button onClick={async()=>{
-                  const a = await api.analysis(selected.spring_id);
-                  alert(`AI Analysis: ${a.assessment.recharge_suitability}% ${a.assessment.recharge_class} · Water stress ${a.assessment.water_stress} · Recommend ${a.recommendation.type} — ${a.recommendation.why}`);
+                  try {
+                    const a = await api.analysis(selected.spring_id);
+                    setModal({
+                      open: true,
+                      title: `AI Hydrological Diagnosis — ${selected.spring_id}`,
+                      content: (
+                        <div className="space-y-3">
+                          <div className="grid grid-cols-2 gap-2 text-xs">
+                            <div className="bg-slate-50 p-2.5 rounded border border-slate-200">
+                              <span className="text-slate-500 block">Recharge Suitability:</span>
+                              <strong className="text-sm text-brand-800">{a.assessment.recharge_suitability}% ({a.assessment.recharge_class})</strong>
+                            </div>
+                            <div className="bg-slate-50 p-2.5 rounded border border-slate-200">
+                              <span className="text-slate-500 block">Water Stress:</span>
+                              <strong className="text-sm text-amber-700">{a.assessment.water_stress}</strong>
+                            </div>
+                          </div>
+                          <div className="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-xs">
+                            <strong className="text-emerald-900 block font-bold mb-1">Recommended Intervention:</strong>
+                            <div className="text-emerald-800 font-semibold">{a.recommendation.type}</div>
+                            <p className="text-emerald-700 mt-1">{a.recommendation.why}</p>
+                          </div>
+                          <div className="flex gap-2 justify-end pt-2">
+                            <button onClick={() => { setModal({ ...modal, open: false }); nav(`/springs?sel=${selected.spring_id}`); }} className={btnGhost + ' !py-1.5 text-xs'}>Open Detail Page</button>
+                            <button onClick={() => { setModal({ ...modal, open: false }); nav(`/planner?spring=${selected.spring_id}&type=${a.recommendation.type}`); }} className={btnPrimary + ' !py-1.5 text-xs'}>Simulate Intervention →</button>
+                          </div>
+                        </div>
+                      ),
+                    });
+                  } catch (e: any) {
+                    setModal({ open: true, title: 'AI Analysis Notice', content: <p className="text-red-700">{e.message}</p> });
+                  }
                 }} className={btnPrimary + ' !py-1 !text-xs'}>RUN AI ANALYSIS</button>
               </div>
             </div>
@@ -170,6 +211,10 @@ export default function RechargeMapPage() {
           </div>
         </Card>
       </div>
+
+      <Modal isOpen={modal.open} onClose={() => setModal({ ...modal, open: false })} title={modal.title}>
+        {modal.content}
+      </Modal>
     </div>
   );
 }

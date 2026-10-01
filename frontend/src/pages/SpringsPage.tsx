@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { api } from '../api/client';
 import MapView, { ALL_LAYERS } from '../components/MapView';
-import { Badge, btnGhost, Card, Err, inputCls, Loading } from '../components/ui';
+import { Badge, btnGhost, Card, Err, inputCls, Loading, Modal } from '../components/ui';
+import { useStudyArea } from '../App';
 
 export default function SpringsPage() {
+  const navigate = useNavigate();
+  const { area } = useStudyArea();
   const [params] = useSearchParams();
   const [springs, setSprings] = useState<any[]>([]);
   const [villages, setVillages] = useState<any[]>([]);
@@ -19,6 +22,8 @@ export default function SpringsPage() {
   const [seas, setSeas] = useState('');
   const [belt, setBelt] = useState<string>(() => localStorage.getItem('jr-belt') || '');
   const [err, setErr] = useState('');
+  const [modal, setModal] = useState<{ open: boolean; title: string; text: string }>({ open: false, title: '', text: '' });
+
 
   const load = (over?: any) => {
     const beltQ = belt ? {belt_id: belt} : undefined;
@@ -170,9 +175,17 @@ export default function SpringsPage() {
                   <b>Recommended:</b> {analysis.recommendation.type} — {analysis.recommendation.why}
                 </div>
                 <div className="flex gap-2 mt-2 flex-wrap">
-                  <button onClick={()=> window.location.href=`/planner?spring=${analysis.spring_id}&type=${analysis.recommendation.type}`} className="text-xs font-semibold bg-emerald-700 text-white rounded px-3 py-1.5">Simulate → Planner</button>
-                  <button onClick={()=> window.location.href=`/crop?spring=${analysis.spring_id}`} className="text-xs font-semibold bg-green-600 text-white rounded px-3 py-1.5">🌱 Crop Advisor</button>
-                  <button onClick={async()=>{ const r=await fetch(`/api/analysis/${analysis.spring_id}/explain`,{method:'POST'}); const j=await r.json(); alert(j.explanation); }} className="text-xs border rounded px-3 py-1.5">Explain (AI)</button>
+                  <button onClick={() => navigate(`/planner?spring=${analysis.spring_id}&type=${analysis.recommendation.type}`)} className="text-xs font-semibold bg-emerald-700 text-white rounded px-3 py-1.5 hover:bg-emerald-800">Simulate → Planner</button>
+                  <button onClick={() => navigate(`/crop?spring=${analysis.spring_id}`)} className="text-xs font-semibold bg-green-600 text-white rounded px-3 py-1.5 hover:bg-green-700">🌱 Crop Advisor</button>
+                  <button onClick={async () => {
+                    try {
+                      const r = await fetch(`/api/analysis/${analysis.spring_id}/explain`, { method: 'POST' });
+                      const j = await r.json();
+                      setModal({ open: true, title: `AI Hydrological Explanation — ${analysis.spring_id}`, text: j.explanation || 'No explanation generated.' });
+                    } catch (e: any) {
+                      setModal({ open: true, title: 'AI Explanation Error', text: `Failed to fetch explanation: ${e.message}` });
+                    }
+                  }} className="text-xs border rounded px-3 py-1.5 hover:bg-slate-50">Explain (AI)</button>
                 </div>
               </Card>
             )}
@@ -198,6 +211,10 @@ export default function SpringsPage() {
           </>
         )}
       </div>
+
+      <Modal isOpen={modal.open} onClose={() => setModal({ ...modal, open: false })} title={modal.title}>
+        <div className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">{modal.text}</div>
+      </Modal>
     </div>
   );
 }

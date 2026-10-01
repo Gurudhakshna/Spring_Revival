@@ -2,10 +2,11 @@
 leaks tracebacks to the client."""
 from __future__ import annotations
 import json as _json
+import logging
 import random
 from typing import Any, Dict, List, Optional
 
-from fastapi import APIRouter, Query, UploadFile, File
+from fastapi import APIRouter, Query, UploadFile, File, Header, HTTPException
 
 from models.schemas import (
     ChatMessage, CommunityReportCreate, CommunityReportStatusUpdate,
@@ -21,11 +22,14 @@ from services import risks as risk_svc
 from services import real_data as real_svc
 from services.data_provider import DATA_BADGE
 
+logger = logging.getLogger("jal-raksha.routes")
+
 router = APIRouter(prefix="/api")
 
 # Injected by main.py at startup
 provider = None          # type: ignore
 ml = None                # type: ignore
+ADMIN_KEY: Optional[str] = None
 
 _grid_cache: Optional[List[Dict[str, Any]]] = None
 
@@ -37,7 +41,9 @@ def _prov():
 
 
 def _friendly(action: str) -> Dict[str, str]:
+    logger.warning("Friendly error returned for action: %s", action)
     return {"detail": f"Unable to load {action}. Please check the dataset."}
+
 
 
 def _village_pop_map() -> Dict[str, int]:
@@ -769,8 +775,13 @@ def report_html(spring_id: str):
         return {"detail": f"Report html failed: {e}"}
 
 # ============ DATA MANAGEMENT (Admin upload) ============
+def _check_admin(x_api_key: Optional[str] = None):
+    if ADMIN_KEY and x_api_key != ADMIN_KEY:
+        raise HTTPException(status_code=401, detail="Admin authorization required: invalid or missing X-API-Key header")
+
 @router.post("/data/upload")
-async def data_upload(file: UploadFile = File(...), type: str = "springs"):
+async def data_upload(file: UploadFile = File(...), type: str = "springs", x_api_key: Optional[str] = Header(default=None)):
+    _check_admin(x_api_key)
     try:
         content = await file.read()
         text = content.decode("utf-8", errors="ignore")
@@ -809,14 +820,18 @@ async def data_upload(file: UploadFile = File(...), type: str = "springs"):
         with open(hist_path, "w") as f: _json.dump(hist, f, indent=2)
         if errors:
             return {"valid": False, "errors": errors[:10], "preview": preview, "count": len(rows), "filename": file.filename}
-        return {"valid": True, "imported": len(rows), "type": type, "preview": preview, "filename": file.filename, "message": "Validated and logged. Overwrite CSV manually to activate (demo safety)."}
+        return {"valid": True, "imported": len(rows), "type": type, "preview": preview, "filename": file.filename, "message": "Validated and logged. Demo validation mode — real import requires admin approval and disk write permissions."}
+    except HTTPException:
+        raise
     except Exception as e:
+        logger.exception("Upload failed: %s", e)
         return {"detail": f"Upload failed: {e}"}
 
 @router.post("/data/upload-csv")
-def data_upload_csv(payload: Dict[str, Any]):
+def data_upload_csv(payload: Dict[str, Any], x_api_key: Optional[str] = Header(default=None)):
     """Admin upload CSV as JSON rows (for demo without multipart).
     payload: {type: 'springs'|'villages'|'wells', rows: [...], validate_only: bool}"""
+    _check_admin(x_api_key)
     try:
         typ = str(payload.get("type") or "").lower()
         rows = payload.get("rows") or []
@@ -853,9 +868,13 @@ def data_upload_csv(payload: Dict[str, Any]):
         hist = hist[-20:]
         _o.makedirs(_o.path.dirname(hist_path), exist_ok=True)
         with open(hist_path, "w") as f: _j.dump(hist, f, indent=2)
-        return {"valid": True, "imported": len(rows), "type": typ, "preview": preview, "message": "Validated and logged (demo - real import would overwrite CSV)"}
+        return {"valid": True, "imported": len(rows), "type": typ, "preview": preview, "message": "Validated and logged (Demo validation mode — real import requires admin approval and disk write permissions)"}
+    except HTTPException:
+        raise
     except Exception as e:
+        logger.exception("Upload failed: %s", e)
         return {"detail": f"Upload failed: {e}"}
+
 
 @router.get("/data/history")
 def data_history():
@@ -1028,25 +1047,34 @@ def cr_get(report_id: str):
 
 
 @router.patch("/community-reports/{report_id}")
-def cr_status(report_id: str, body: CommunityReportStatusUpdate):
+def cr_status(report_id: str, body: CommunityReportStatusUpdate, x_api_key: Optional[str] = Header(default=None)):
+    _check_admin(x_api_key)
     try:
         r = cr_svc.set_status(report_id, body.status)
         if not r:
             return {"detail": f"Report {report_id} not found or invalid status."}
         return r
-    except Exception:
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception("Community report status update failed: %s", e)
         return _friendly("community report update")
 
 
 @router.post("/community-reports/{report_id}/reverify")
-def cr_reverify(report_id: str):
+def cr_reverify(report_id: str, x_api_key: Optional[str] = Header(default=None)):
+    _check_admin(x_api_key)
     try:
         r = cr_svc.refresh_verification(report_id)
         if not r:
             return {"detail": f"Report {report_id} not found."}
         return r
-    except Exception:
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception("Report reverification failed: %s", e)
         return _friendly("report verification")
+
 
 
 @router.post("/community-reports/chat")

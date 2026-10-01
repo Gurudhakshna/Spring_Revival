@@ -48,13 +48,55 @@ export function Kpi({ label, value, hint }: { label: string; value: string; hint
 }
 
 export function Err({ message, onRetry }: { message: string; onRetry?: () => void }) {
+  const isNetwork = message.includes('Failed to fetch') || message.includes('NetworkError') || message.includes('Backend unavailable');
   return (
     <div className="bg-red-50 border border-red-200 text-red-800 text-sm rounded-lg p-4">
-      <div className="font-semibold">Something went wrong</div>
-      <div className="mt-1">{message}</div>
+      <div className="font-semibold text-red-900">
+        {isNetwork ? 'Backend Connection Notice' : 'Service Notice'}
+      </div>
+      <div className="mt-1 text-xs text-red-800 leading-relaxed">
+        {isNetwork
+          ? 'Unable to reach backend service on http://localhost:8000. Please ensure the FastAPI backend is running (`uvicorn main:app --reload`).'
+          : message}
+      </div>
       {onRetry && (
-        <button onClick={onRetry} className="mt-2 text-xs font-semibold underline">Retry</button>
+        <button onClick={onRetry} className="mt-2.5 text-xs font-semibold text-red-700 bg-red-100 hover:bg-red-200 rounded px-2.5 py-1">
+          ↺ Retry Request
+        </button>
       )}
+    </div>
+  );
+}
+
+export function Modal({ isOpen, onClose, title, children }: {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  children: React.ReactNode;
+}) {
+  if (!isOpen) return null;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+      <div className="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 bg-slate-50/70">
+          <h3 className="text-sm font-bold text-slate-800">{title}</h3>
+          <button
+            onClick={onClose}
+            className="text-slate-400 hover:text-slate-600 rounded-lg p-1 hover:bg-slate-200 text-base leading-none"
+            aria-label="Close modal"
+          >
+            ✕
+          </button>
+        </div>
+        <div className="p-5 overflow-y-auto space-y-3 text-sm text-slate-700">
+          {children}
+        </div>
+        <div className="px-5 py-3 border-t border-slate-100 bg-slate-50 flex justify-end">
+          <button onClick={onClose} className="text-xs font-semibold bg-brand-700 text-white rounded px-4 py-1.5 hover:bg-brand-800">
+            Done
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
